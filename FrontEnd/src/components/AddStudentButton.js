@@ -3,16 +3,16 @@ import '../CSS/AddCampus.css'
 import {Link} from 'react-router-dom'
 
 
-const AddCampusButton = (props) => {
+const AddStudentButton = (props) => {
     return ( 
         <div>
             <Link to="/addCompus">
             <button className="AddCampusButton">
-                Campus
+                +Student
                 </button>
                 </Link>
         </div>
      );
 }
  
-export default AddCampusButton;
+export default AddStudentButton;

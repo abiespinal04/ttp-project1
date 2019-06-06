@@ -11,7 +11,20 @@ import AddCampus from './AddCompusButton';
 
 class Card extends Component {
     state = { 
-        campus:[]
+        campus:[
+        {title:'Lehman College', studentCount:50},
+        {title:'Hunter College', studentCount:40},
+        {title:'BMCC College', studentCount:80},
+        {title:'Lehman College', studentCount:50},
+        {title:'Hunter College', studentCount:40},
+        {title:'BMCC College', studentCount:80},
+        {title:'Lehman College', studentCount:50},
+        {title:'Hunter College', studentCount:40},
+        {title:'BMCC College', studentCount:80},
+        {title:'Lehman College', studentCount:50},
+        {title:'Hunter College', studentCount:40},
+        {title:'BMCC College', studentCount:80},
+            ]
      }
 
      componentDidMount(){
@@ -24,14 +37,23 @@ class Card extends Component {
      }
 
      handleCampusesRender = () => {
-         if(this.state.campus.length !== 0) {
+         if(this.state.campus.length === 0) {
             return(
                 <p>There are no campuses registered in the database</p>
             )
          }
          else {
             return(
-                <Campuses campus={{title:'Lehman College', studentCount:10}}/>
+                 this.state.campus.map( campus =>  
+                    <div style={{
+                     margin:20,
+                     borderStyle:'solid', 
+                     borderBottomWidth:3,
+                     borderColor:'black'}}
+                     >
+                         <Campuses campus={campus}/>
+                    </div>
+            )
             )
          }
      }
@@ -53,9 +75,9 @@ class Card extends Component {
 
         <div className="MainContainer">
             
-           
+           <div className="CampusCard">
            {this.handleCampusesRender()}
-        
+           </div>
            
          
         </div> 
