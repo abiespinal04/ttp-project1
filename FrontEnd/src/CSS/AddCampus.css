@@ -1,0 +1,10 @@
+.AddCampusButton{
+    background-color: aqua; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-left: 5%;
+    font-family: bold;
+    display: inline-block;
+    font-size: 16px;
+}
