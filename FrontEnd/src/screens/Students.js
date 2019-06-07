@@ -1,30 +1,37 @@
 import React, { Component } from 'react';
 import StudentCard from '../components/StudentCard';
 import AddStudentButton from '../components/AddStudentButton'
+import * as actions from '../store/actions'
+import {connect} from 'react-redux'
 import Axios from 'axios'
 
 
 class Student extends Component {
     state = { 
         studentList :[ 
-        {firstName:'JOHN', lastName:'SNOW'},
-        {firstName:'JOHN', lastName:'WICK'},
-        {firstName:'BATMAN', lastName:'KNIGHT-WATCHER'},
-        {firstName:'GOKU', lastName:'Z-FIGHTER'},
-        {firstName:'VEGETA', lastName:'Z-FIGHTER'},
-        {firstName:'GOHAN', lastName:'Z-FIGHTER'},
-        {firstName:'KRILLIN', lastName:'Z-FIGHTER'},
-        {firstName:'NARUTO', lastName:'UZUMAKI'},
-        {firstName:'SASUKE', lastName:'UCHIHA'},
-        {firstName:'ITACHI', lastName:'UCHIHA'},
-        {firstName:'CHOJI', lastName:'AKIMICHI'},
-        {firstName:'JIRAIYA', lastName:'SENSEI'},]
+
+        ]
      }
 
     // async componentDidMount(){
     //     const {data} = await Axios.get()
     //     this.setState({studentList:data});
     //  }
+
+     componentDidMount(){
+        console.log(this.props.StudentsList)
+        this.setState({studentList:this.props.StudentsList.users})
+     }
+
+     handleNewList = (newList) => {
+         this.setState({studentList:newList})
+     }
+     componentDidUpdate(prevProps) {
+         console.log("InsideComponentDidUpdate",prevProps)
+         if(prevProps.DeleteStudent !== this.props.DeleteStudent){
+            this.handleNewList(this.props.DeletedStudList.users)
+         }
+     }
 
     handleStudentList = () => {
         
@@ -40,12 +47,18 @@ class Student extends Component {
                      borderColor:'black'}}
                      >
                          <StudentCard 
+                         studentList = {this.state.studentList}
                          studentName={student}
                          />
                     </div>
                 )
         )
         }
+    }
+
+    handleState = () => {
+        console.log("Inside HANDLESTATE",this.props.DeletedStudList.users)
+        this.setState({studentList:this.props.DeletedStudList.users})
     }
     render() { 
         return ( 
@@ -63,9 +76,18 @@ class Student extends Component {
     <div>
     {this.handleStudentList()} 
     </div>
+    <button onClick ={this.handleState}> updateState</button>
     </React.Fragment>
      );
     }
 }
+
+const mapStateToProps = (state) => {
+
+    return{
+        StudentsList : state.StudentsList,
+        DeletedStudList: state.DeletedStudent
+    }
+}
  
-export default Student; 
+export default connect(mapStateToProps,actions)(Student); 
