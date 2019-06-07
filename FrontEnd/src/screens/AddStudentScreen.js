@@ -7,12 +7,23 @@ class AddCampusScreen extends Component {
            firstName:'',lastName:''
      }
 
+     disable={
+            isDisable:true
+     }
 
     handleAddStudent = () => {
 
         this.props.AddStudent(this.state)
 
     }
+
+    // handleDisable = () => {
+    //     if(this.state.firstName ==='' && this.state.lastName===''){
+    //         return this.disable.isDisable === true
+    //     } else {
+    //         return this.disable.isDisable === false
+    //     }
+    // }
     render() { 
         return ( 
             //backgroundColor:'grey',height:800
@@ -21,6 +32,7 @@ class AddCampusScreen extends Component {
                 <input style={{marginLeft:10 }} placeholder="Last Name" onChange={(event) => this.setState({lastName:event.target.value})}/>
                 <button 
                 style={{marginLeft:10,fontSize:17,backgroundColor:'grey', color:'white'}}
+                disabled={(this.state.firstName ==='' || this.state.lastName ==='')? true:false}
                 onClick = {this.handleAddStudent}
                 >
                  Submit
