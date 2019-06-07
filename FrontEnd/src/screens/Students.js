@@ -26,13 +26,19 @@ class Student extends Component {
      handleNewList = (newList) => {
          this.setState({studentList:newList})
      }
-     componentDidUpdate(prevProps) {
-         console.log("InsideComponentDidUpdate",prevProps)
-         if(prevProps.DeleteStudent !== this.props.DeleteStudent){
-            this.handleNewList(this.props.DeletedStudList.users)
-         }
-     }
 
+    
+    
+     shouldComponentUpdate(nextProps, nextState) {
+        return this.state.studentList != nextProps.DeletedStudList.users
+      }
+
+      componentDidUpdate(prevProps,prevState) {
+       
+        if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users)
+           this.handleNewList(this.props.DeletedStudList.users)
+       
+    }
     handleStudentList = () => {
         
         if(this.state.studentList.length === 0){
@@ -76,7 +82,7 @@ class Student extends Component {
     <div>
     {this.handleStudentList()} 
     </div>
-    <button onClick ={this.handleState}> updateState</button>
+    {/* <button onClick ={this.handleState}> updateState</button> */}
     </React.Fragment>
      );
     }
