@@ -5,7 +5,7 @@ const Edit = (props) => {
     return ( 
         <div>
             <Link to="editScreen">
-            <button style={{backgroundColor:'white'}}>
+            <button style={{backgroundColor:'white',margin:5}}>
                 Edit
             </button>
             </Link>
