@@ -3,10 +3,23 @@ import {Link} from 'react-router-dom'
 
 
 const EditStudentBtn = (props) => {
+
+    const handleEditStudent = () => {
+        props.handleEdit()
+     }
     return ( 
+        
     <div>
-        <Link to="editStudentScreen">
-        <button style={{backgroundColor:'white',margin:5}}>
+
+
+        <Link to={{
+    pathname: '/editStudentScreen',
+    state: props.studentName,
+    index: props.index
+    }}>
+        <button style={{backgroundColor:'white',margin:5}}
+        // onClick={handleEditStudent}
+        >
             Edit
         </button>
         </Link>

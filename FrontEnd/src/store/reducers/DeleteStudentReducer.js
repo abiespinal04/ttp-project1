@@ -5,11 +5,13 @@ const INITIAL_STATE = {
 }
 
 export default (state=INITIAL_STATE, action) => {
-console.log("Inside Delete action", action.payload)
+
     switch(action.type){
-        case DELETE_STUDENT:
+        
+        case DELETE_STUDENT:{
+                console.log("Inside Delete action", action.payload)
             return {...state,users:action.payload,}
-           
+        }
             default:{
                 return state
                 }

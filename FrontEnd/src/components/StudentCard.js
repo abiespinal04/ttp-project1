@@ -14,6 +14,11 @@ class StudentCard extends Component {
     // let newList = this.props.studentList.filter( student => student !== this.props.studentName)
         this.props.DeleteStudent(this.props.index);
     }
+
+    handleEdit = () => {
+        console.log("HandleDeleteAction",this.props.index)
+        this.props.EditStudent(this.props.index)
+    }
     render() { 
         return ( 
             <div>
@@ -28,7 +33,11 @@ class StudentCard extends Component {
                 <div>
                     <Delete 
                     handleDelete={this.handleDelete}/>
-                    <EditStudentBtn/>
+                    <EditStudentBtn
+                    index={this.props.index}
+                    studentName = {this.props.studentName}
+                    handleEdit={this.handleEdit}
+                    />
                 </div>
             </div>
 
