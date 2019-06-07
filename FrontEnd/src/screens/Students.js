@@ -6,7 +6,19 @@ import Axios from 'axios'
 
 class Student extends Component {
     state = { 
-        studentList :[/*{firstName:'Abi', lastName:'espinal'}*/]
+        studentList :[ 
+        {firstName:'JOHN', lastName:'SNOW'},
+        {firstName:'JOHN', lastName:'WICK'},
+        {firstName:'BATMAN', lastName:'KNIGHT-WATCHER'},
+        {firstName:'GOKU', lastName:'Z-FIGHTER'},
+        {firstName:'VEGETA', lastName:'Z-FIGHTER'},
+        {firstName:'GOHAN', lastName:'Z-FIGHTER'},
+        {firstName:'KRILLIN', lastName:'Z-FIGHTER'},
+        {firstName:'NARUTO', lastName:'UZUMAKI'},
+        {firstName:'SASUKE', lastName:'UCHIHA'},
+        {firstName:'ITACHI', lastName:'UCHIHA'},
+        {firstName:'CHOJI', lastName:'AKIMICHI'},
+        {firstName:'JIRAIYA', lastName:'SENSEI'},]
      }
 
     // async componentDidMount(){
@@ -20,7 +32,16 @@ class Student extends Component {
             return <p>No Students in the database</p>
         }else{
         return(
-            this.state.studentList.map(student =>  <StudentCard studentName ={student}/>)
+                this.state.studentList.map( student =>  
+                    <div style={{
+                     margin:20,
+                     borderStyle:'solid', 
+                     borderBottomWidth:3,
+                     borderColor:'black'}}
+                     >
+                         <StudentCard studentName={student}/>
+                    </div>
+                )
         )
         }
     }
