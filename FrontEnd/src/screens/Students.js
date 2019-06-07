@@ -27,8 +27,6 @@ class Student extends Component {
          this.setState({studentList:newList})
      }
 
-    
-    
      shouldComponentUpdate(nextProps, nextState) {
         return this.state.studentList != nextProps.DeletedStudList.users && nextState.studentList
       }
@@ -50,7 +48,7 @@ class Student extends Component {
     }
     handleStudentList = () => {
         
-        if(this.state.studentList.length === 0){
+        if(this.props.StudentsList === 0){
             return <p>No Students in the database</p>
         }else{
         return(
