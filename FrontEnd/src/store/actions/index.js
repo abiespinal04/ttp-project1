@@ -1,7 +1,7 @@
 import {DELETE_STUDENT,ADD_STUDENT} from './types'
 
 export const DeleteStudent = (student) => {
-
+    console.log(student)
     return{
         type:DELETE_STUDENT,
         payload:student

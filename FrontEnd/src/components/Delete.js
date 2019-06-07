@@ -4,9 +4,18 @@ import '../CSS/Delete.css'
 
 
 const Delete = (props) => {
+
+   const handleDeleteStudent = () => {
+        props.handleDelete(props.student)
+    }
     return ( 
         <div>
-            <button className="DeleteContainer">Delete</button>
+            <button 
+            className="DeleteContainer"
+            onClick={handleDeleteStudent}
+            >
+                Delete
+            </button>
         </div>
      );
 }

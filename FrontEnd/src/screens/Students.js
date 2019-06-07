@@ -39,7 +39,9 @@ class Student extends Component {
                      borderBottomWidth:3,
                      borderColor:'black'}}
                      >
-                         <StudentCard studentName={student}/>
+                         <StudentCard 
+                         studentName={student}
+                         />
                     </div>
                 )
         )
