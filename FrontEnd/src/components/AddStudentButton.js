@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 const AddStudentButton = (props) => {
     return ( 
         <div>
-            <Link to="/addCompus">
+            <Link to="/addStudent">
             <button className="AddCampusButton">
                 +Student
                 </button>

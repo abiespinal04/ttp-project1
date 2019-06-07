@@ -1,4 +1,4 @@
-import {ADD_STUDENT} from  '../actions/types'
+import {ADD_STUDENT,DELETE_STUDENT} from  '../actions/types'
 
 const INITIAL_STATE = {
     users: [ 
@@ -19,11 +19,15 @@ const INITIAL_STATE = {
 }
 
 export default (state=INITIAL_STATE, action) => {
-
+    console.log("Inside AddStudentReducer", action.payload)
     switch(action.type) {
         case ADD_STUDENT:
-            return [...state,...action.payload]
+            state.users.push(action.payload);
+        return state
 
+        case DELETE_STUDENT:
+            delete state.users[action.payload]
+            return state
             default:{
                 
                 return state

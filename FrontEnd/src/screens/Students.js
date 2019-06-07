@@ -19,7 +19,7 @@ class Student extends Component {
     //  }
 
      componentDidMount(){
-        console.log(this.props.StudentsList)
+        console.log("Inside componentDidMount",this.props.StudentsList)
         this.setState({studentList:this.props.StudentsList.users})
      }
 
@@ -30,14 +30,23 @@ class Student extends Component {
     
     
      shouldComponentUpdate(nextProps, nextState) {
-        return this.state.studentList != nextProps.DeletedStudList.users
+        return this.state.studentList != nextProps.DeletedStudList.users && nextState.studentList
       }
 
       componentDidUpdate(prevProps,prevState) {
-       
-        if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users)
-           this.handleNewList(this.props.DeletedStudList.users)
-       
+        console.log("New StudentList", this.props.StudentsList)
+        // if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users){
+        //    this.handleNewList(this.props.DeletedStudList.users)
+        // }
+        // if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users){
+        //     this.handleNewList(this.props.DeletedStudList.users)
+        //  }
+
+           if(prevProps.StudentsList.users !== this.props.StudentsList.users){
+             
+            this.setState({studentList:this.props.StudentsList})
+           
+        }
     }
     handleStudentList = () => {
         
@@ -45,7 +54,7 @@ class Student extends Component {
             return <p>No Students in the database</p>
         }else{
         return(
-                this.state.studentList.map( student =>  
+                this.state.studentList.map( (student,index) =>  
                     <div style={{
                      margin:20,
                      borderStyle:'solid', 
@@ -53,7 +62,7 @@ class Student extends Component {
                      borderColor:'black'}}
                      >
                          <StudentCard 
-                         studentList = {this.state.studentList}
+                            index={index}
                          studentName={student}
                          />
                     </div>

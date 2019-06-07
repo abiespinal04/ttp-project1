@@ -15,6 +15,7 @@ import {connect} from 'react-redux'
 import ReduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './store/reducers'
+import AddStudentScreen from './screens/AddStudentScreen'
 
 
 function App() {
@@ -27,11 +28,13 @@ function App() {
     <NavBar/>
 
     <Switch>
+
     <Route path='/editStudentScreen' component={EditStudentScreen}/>
     <Route path='/editScreen' component={EditScreen}/>
     <Route path='/campusListing' component={CampusListing}/>
     <Route path='/students' component={Students}/>
     <Route path='/addCompus' component={AddCampusScreen}/>
+    <Route path='/addStudent' component={AddStudentScreen}/>
     <Route path='/' component={Home}/>
     </Switch>
     </Provider>
