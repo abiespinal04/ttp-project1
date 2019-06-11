@@ -6,6 +6,7 @@ import Edit from '../components/Edit';
 import AddCompus from '../components/AddCompusButton';
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
+import AddCampusButton from '../components/AddCompusButton';
 
 
 class Campuses extends Component {
@@ -23,7 +24,6 @@ class Campuses extends Component {
     // };
 
     handleDelete = () => {
-        console.log("SSSSSSSS")
         this.setState({ campusesList: this.props.CampusesList.campus });
     }
 
@@ -47,7 +47,7 @@ class Campuses extends Component {
     //         this.setState({ campusesList: this.props.CampusesList.campus });
     //       }
     // }
-    handleStudentList = () => {
+    handleCampusList = () => {
         if (this.props.StudentsList === 0) {
             return <p>No Students in the database</p>;
         } else {
@@ -75,9 +75,28 @@ class Campuses extends Component {
     // };
     render() {
         return (
-            <div className="CampusesContainer">
-                {this.handleStudentList()}
-            </div>);
+            <React.Fragment>
+            <div id="studentBody">
+              <div id="titlePlusAddStudent">
+                <div
+                  style={{
+                    display: "flex",
+                    marginTop: 10,
+                    marginLeft: 60,
+                    marginRight: "71%"
+                  }}
+                >
+                  <h1>Campuses</h1>
+                </div>
+                <div id="addButton">
+                  <AddCampusButton />
+                </div>
+              </div>
+              <div>{this.handleCampusList()}</div>
+              {/* <button onClick ={this.handleState}> updateState</button> */}
+            </div>
+          </React.Fragment>
+            );
     }
 }
 
