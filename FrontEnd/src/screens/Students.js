@@ -50,14 +50,7 @@ class Student extends Component {
       return <p>No Students in the database</p>;
     } else {
       return this.state.studentList.map((student, index) => (
-        <div
-          style={{
-            margin: 20,
-            borderStyle: "solid",
-            borderBottomWidth: 3,
-            borderColor: "black"
-          }}
-        >
+        <div>
           <StudentCard index={index} studentName={student} />
         </div>
       ));

@@ -22,19 +22,22 @@ class StudentCard extends Component {
     return (
       <div id="card">
         <div>
-          <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h3>
-          <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-            {this.props.studentName.firstName}
-          </h6>
+          <div>
+            <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h3>
+            <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
+              {this.props.studentName.firstName}
+            </h6>
+          </div>
+          <div>
+            <label style={{ fontFamily: "Futura", marginLeft: 2 }}>
+              Last Name
+            </label>
+            <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
+              {this.props.studentName.lastName}
+            </p>
+          </div>
         </div>
-        <div>
-          <label style={{ fontFamily: "Futura", marginLeft: 2 }}>
-            Last Name
-          </label>
-          <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-            {this.props.studentName.lastName}
-          </p>
-        </div>
+
         <div>
           <Delete handleDelete={this.handleDelete} />
           <EditStudentBtn
