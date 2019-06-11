@@ -21,7 +21,7 @@ class StudentCard extends Component {
   render() {
     return (
       <div id="card">
-        <div>
+        <div className="firstAndLastName">
           <div>
             <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h3>
             <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
@@ -36,12 +36,11 @@ class StudentCard extends Component {
               {this.props.student.lastName}
             </p>
           </div>
-          <div>
+          <div className="description">
             <p>{this.props.student.description}</p>
           </div>
         </div>
-
-        <div>
+        <div className="buttons">
           <Delete handleDelete={this.handleDelete} />
           <EditStudentBtn
             index={this.props.index}
