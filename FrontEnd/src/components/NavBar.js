@@ -5,7 +5,10 @@ const NavBar = props => {
   return (
     <nav
       class="navbar sticky-top navbar-expand-lg navbar-dark"
-      style={{ backgroundColor: "rgba(37, 37, 37, 1)" }}
+      style={{
+        backgroundColor: "rgba(37, 37, 37, 1)",
+        boxShadow: "0px 0px 4px 2px rgba(0, 0, 0, 0.3)"
+      }}
     >
       <Link class="navbar-brand" to="/">
         Home
