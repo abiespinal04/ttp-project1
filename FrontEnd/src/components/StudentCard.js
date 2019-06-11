@@ -23,15 +23,13 @@ class StudentCard extends Component {
       <div id="card">
         <div className="firstAndLastName">
           <div>
-            <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h3>
+            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h4>
             <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
               {this.props.student.firstName}
             </h6>
           </div>
           <div>
-            <label style={{ fontFamily: "Futura", marginLeft: 2 }}>
-              Last Name
-            </label>
+            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>Last Name</h4>
             <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
               {this.props.student.lastName}
             </p>

@@ -4,9 +4,9 @@
 }
 
 #titlePlusAddStudent {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 20px;
 }
 

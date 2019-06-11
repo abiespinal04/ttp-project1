@@ -66,14 +66,7 @@ class Student extends Component {
       <React.Fragment>
         <div id="studentBody">
           <div id="titlePlusAddStudent">
-            <div
-              style={{
-                display: "flex",
-                marginTop: 10,
-                marginLeft: 60,
-                marginRight: "71%"
-              }}
-            >
+            <div>
               <h1>Students</h1>
             </div>
             <div id="addButton">
