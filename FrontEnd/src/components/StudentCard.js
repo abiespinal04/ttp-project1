@@ -36,9 +36,9 @@ class StudentCard extends Component {
               {this.props.student.lastName}
             </p>
           </div>
-          <div className="description">
-            <p>{this.props.student.description}</p>
-          </div>
+        </div>
+        <div className="description">
+          <p>{this.props.student.description}</p>
         </div>
         <div className="buttons">
           <Delete handleDelete={this.handleDelete} />
