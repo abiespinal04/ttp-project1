@@ -10,7 +10,7 @@ class StudentCard extends Component {
 
   handleDelete = () => {
     console.log("HandleDeleteAction", this.props.index);
-    // let newList = this.props.studentList.filter( student => student !== this.props.studentName)
+    // let newList = this.props.studentList.filter( student => student !== this.props.student)
     this.props.DeleteStudent(this.props.index);
   };
 
@@ -25,7 +25,7 @@ class StudentCard extends Component {
           <div>
             <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h3>
             <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-              {this.props.studentName.firstName}
+              {this.props.student.firstName}
             </h6>
           </div>
           <div>
@@ -33,8 +33,11 @@ class StudentCard extends Component {
               Last Name
             </label>
             <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-              {this.props.studentName.lastName}
+              {this.props.student.lastName}
             </p>
+          </div>
+          <div>
+            <p>{this.props.student.description}</p>
           </div>
         </div>
 
@@ -42,7 +45,7 @@ class StudentCard extends Component {
           <Delete handleDelete={this.handleDelete} />
           <EditStudentBtn
             index={this.props.index}
-            studentName={this.props.studentName}
+            student={this.props.student}
             handleEdit={this.handleEdit}
           />
         </div>

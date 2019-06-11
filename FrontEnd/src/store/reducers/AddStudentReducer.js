@@ -5,73 +5,73 @@ const INITIAL_STATE = {
     {
       firstName: "JOHN",
       lastName: "SNOW",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "JOHN",
       lastName: "WICK",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "BATMAN",
       lastName: "KNIGHT-WATCHER",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "GOKU",
       lastName: "Z-FIGHTER",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "VEGETA",
       lastName: "Z-FIGHTER",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "GOHAN",
       lastName: "Z-FIGHTER",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "KRILLIN",
       lastName: "Z-FIGHTER",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "NARUTO",
       lastName: "UZUMAKI",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "SASUKE",
       lastName: "UCHIHA",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "ITACHI",
       lastName: "UCHIHA",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "CHOJI",
       lastName: "AKIMICHI",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     },
     {
       firstName: "JIRAIYA",
       lastName: "SENSEI",
-      decription:
+      description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Est libero sapiente hic natus placeat repellat quisquam vel vero, quasi laudantium assumenda. Doloribus facilis et adipisci maxime voluptate saepe placeat ipsum."
     }
   ]

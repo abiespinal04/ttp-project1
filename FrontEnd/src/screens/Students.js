@@ -51,7 +51,7 @@ class Student extends Component {
     } else {
       return this.state.studentList.map((student, index) => (
         <div>
-          <StudentCard index={index} studentName={student} />
+          <StudentCard index={index} student={student} />
         </div>
       ));
     }
