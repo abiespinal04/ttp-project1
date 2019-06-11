@@ -13,9 +13,7 @@ class EditHomeScreen extends Component {
 
     handleEdit = () => {
         this.props.handleEdit()
-
-        const data = Axios.get("http://localhost/hello/world")
-        data 
+    
     }
 
     handleEditSubmit = async () =>{
