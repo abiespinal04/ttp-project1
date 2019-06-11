@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 const NavBar = props => {
   return (
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark"
+      style={{ backgroundColor: "rgba(37, 37, 37, 1)" }}
+    >
       <Link class="navbar-brand" to="/">
         Home
       </Link>
