@@ -4,6 +4,7 @@ import EditStudentBtn from "./EditStudentBtn";
 import { connect } from "react-redux";
 import * as actions from "../store/actions";
 import "../CSS/StudentCard.css";
+import EditCampusBtn from "./EditCampusBtn";
 
 class ProfileCard extends Component {
   state = {};
@@ -41,9 +42,9 @@ class ProfileCard extends Component {
         </div>
         <div>
           <Delete handleDelete={this.handleDelete} />
-          <EditStudentBtn
+          <EditCampusBtn
             index={this.props.index}
-            studentName={this.props.studentName}
+            campusName={this.props.campusName}
             handleEdit={this.handleEdit}
           />
         </div>

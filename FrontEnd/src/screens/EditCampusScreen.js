@@ -3,7 +3,7 @@ import Axios from 'axios'
 
 
 
-class EditScreen extends Component {
+class EditHomeScreen extends Component {
     state = { 
         name:'',
         location:'',
@@ -13,6 +13,9 @@ class EditScreen extends Component {
 
     handleEdit = () => {
         this.props.handleEdit()
+
+        const data = Axios.get("http://localhost/hello/world")
+        data 
     }
 
     handleEditSubmit = async () =>{
@@ -34,4 +37,4 @@ class EditScreen extends Component {
     }
 }
  
-export default EditScreen; 
+export default EditHomeScreen; 

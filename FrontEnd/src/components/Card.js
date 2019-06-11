@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../CSS/Card.css'
 import Delete from './Delete';
-import Edit from './Edit'
+import Edit from './EditCampusBtn'
 import Campuses from '../screens/Campuses'
 import ProfileCard from './ProfileCard';
 import Axios from 'axios'

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../CSS/Campuses.css'
 import ProfileCard from '../components/ProfileCard';
 import Delete from '../components/Delete';
-import Edit from '../components/Edit';
+import Edit from '../components/EditCampusBtn';
 import AddCompus from '../components/AddCompusButton';
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
