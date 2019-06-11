@@ -33,7 +33,7 @@ function App() {
     <Route path='/editScreen' component={EditScreen}/>
     <Route path='/campusListing' component={CampusListing}/>
     <Route path='/students' component={Students}/>
-    <Route path='/addCompuses' component={AddCampusScreen}/>
+    <Route path='/addCampuses' component={AddCampusScreen}/>
     <Route path='/addStudent' component={AddStudentScreen}/>
     <Route path='/' component={Home}/>
     </Switch>

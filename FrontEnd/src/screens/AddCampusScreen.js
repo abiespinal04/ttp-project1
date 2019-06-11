@@ -5,7 +5,7 @@ import * as action from '../store/actions'
 
 class AddCampusScreen extends Component {
     state = { 
-           campusName:'',campusStudents:''
+           title:'',studentCount:''
      }
 
      disable={
@@ -14,12 +14,12 @@ class AddCampusScreen extends Component {
 
     handleAddStudent = () => {
 
-        this.props.AddStudent(this.state)
+        this.props.AddSchool(this.state)
 
     }
 
     // handleDisable = () => {
-    //     if(this.state.campusName ==='' && this.state.campusStudents===''){
+    //     if(this.state.title ==='' && this.state.studentCount===''){
     //         return this.disable.isDisable === true
     //     } else {
     //         return this.disable.isDisable === false
@@ -29,12 +29,12 @@ class AddCampusScreen extends Component {
         return ( 
             //backgroundColor:'grey',height:800
             <div  style={{marginLeft:10}}  >
-                <input style={{marginLeft:10 }} placeholder="First Name" onChange={(event) => this.setState({campusName:event.target.value})}/>
-                <input style={{marginLeft:10 }} placeholder="Last Name" onChange={(event) => this.setState({campusStudents:event.target.value})}/>
-                <Link to="/students">
+                <input style={{marginLeft:10 }} placeholder="School name" onChange={(event) => this.setState({title:event.target.value})}/>
+                <input input type="text" pattern="[0-9]*"  style={{marginLeft:10 }} placeholder="#Students" onChange={(event) => this.setState({studentCount:event.target.value.replace(/\D/,'')})}/>
+                <Link to="/campusListing">
                 <button 
                 style={{marginLeft:10,fontSize:17,backgroundColor:'grey', color:'white'}}
-                disabled={(this.state.campusName ==='' || this.state.campusStudents ==='')? true:false}
+                disabled={(this.state.title ==='' || this.state.studentCount ==='')? true:false}
                 onClick = {this.handleAddStudent}
                 >
                  Submit
@@ -48,7 +48,7 @@ class AddCampusScreen extends Component {
 const mapStateToProps = (state) => {
     
     return{
-        AddStudent: state.StudentsList
+        AddCampus: state.CampusesList
     }
 }
 
