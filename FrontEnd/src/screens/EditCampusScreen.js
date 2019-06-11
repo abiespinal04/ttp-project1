@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import * as actions from '../store/actions'
 import Axios from 'axios'
 
 
 
 class EditHomeScreen extends Component {
     state = { 
-        name:'',
-        location:'',
-        imageURL:'',
-        description:''
+        title:'',
+        studentCount:'',
+        // imageURL:'',
+        // description:''
      }
 
     handleEdit = () => {
@@ -16,23 +19,30 @@ class EditHomeScreen extends Component {
     
     }
 
-    handleEditSubmit = async () =>{
-        // let editCampus = {...this.state}
-        // const {data} = await Axios.post()
+    handleEditSubmit =  () =>{
+        this.props.location.state.title = this.state.title
+        this.props.location.state.studentCount = this.state.studentCount
+       this.props.EditCampus(this.props.location.index,this.props.location.state)
+
 
     }
 
     render() { 
         return ( 
             <div style={{display:'flex', flexDirection:'column', width:'50%'}}>
-                <input placeholder='Campus Name' onChange={(event)=> this.setState({name:event.target.value})}/>
-                <input placeholder='Location' onChange={(event)=> this.setState({location:event.target.value})}/>
-                <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
-                <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/>
-                <button style={{backgroundColor:'green'}}>Save Changes</button>
+                <input placeholder='Campus Name' onChange={(event)=> this.setState({title:event.target.value})}/>
+                <input placeholder='students count' onChange={(event)=> this.setState({studentCount:event.target.value})}/>
+                {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
+                <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
+                <Link to="campusListing">
+                <button 
+                style={{backgroundColor:'green'}}
+                onClick={this.handleEditSubmit}
+                >Save Changes</button>
+                </Link>
             </div>
          );
     }
 }
  
-export default EditHomeScreen; 
+export default connect(null, actions)(EditHomeScreen); 

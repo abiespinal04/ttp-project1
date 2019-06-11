@@ -3,7 +3,7 @@ import '../CSS/Card.css'
 import Delete from './Delete';
 import Edit from './EditCampusBtn'
 import Campuses from '../screens/Campuses'
-import ProfileCard from './ProfileCard';
+
 import Axios from 'axios'
 import AddCampus from './AddCompusButton';
 

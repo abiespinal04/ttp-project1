@@ -22,8 +22,8 @@ export default (state = INITIAL_STATE, action) => {
         }
         case EDIT_CAMPUS: {
             console.log("Inside EDIT_STUDENT REDUCER", action.payload)
-            state.campus[action.payload.index].firstName = action.payload.student.firstName
-            state.campus[action.payload.index].lastName = action.payload.student.lastName
+            state.campus[action.payload.index].title = action.payload.campus.title
+            state.campus[action.payload.index].studentCount = action.payload.campus.studentCount
             return state
         }
 

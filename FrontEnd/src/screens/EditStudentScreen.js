@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom'
 import * as actions from '../store/actions'
 
 
@@ -33,10 +34,13 @@ class EditStudentScreen extends Component {
                 <input placeholder='last name' onChange={(event)=> this.setState({lastName:event.target.value})}/>
                 {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
                 <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
+                
+                <Link to="students">
                 <button 
                 style={{backgroundColor:'green'}}
                 onClick={this.handleEditSubmit}
                 >Save Changes</button>
+                </Link>
             </div>
          );
     }
