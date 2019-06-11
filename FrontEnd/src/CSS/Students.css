@@ -1,0 +1,18 @@
+#studentBody {
+  background-color: rgb(48, 48, 48);
+  color: white;
+}
+
+#titlePlusAddStudent {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+#addButton {
+  padding-top: 10px;
+}
