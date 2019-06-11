@@ -10,13 +10,12 @@ const EditStudentBtn = props => {
       <Link
         to={{
           pathname: "/editStudentScreen",
-          state: props.studentName,
+          state: props.campusName,
           index: props.index
         }}
       >
         <button
           className="btn btn-outline-warning"
-          // onClick={handleEditStudent}
         >
           Edit
         </button>

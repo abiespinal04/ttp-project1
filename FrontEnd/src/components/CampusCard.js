@@ -4,8 +4,10 @@ import EditStudentBtn from "./EditStudentBtn";
 import { connect } from "react-redux";
 import * as actions from "../store/actions";
 import "../CSS/StudentCard.css";
+import EditCampusBtn from "./EditCampusBtn";
+import "../CSS/StudentCard.css";
 
-class ProfileCard extends Component {
+class CampusCard extends Component {
   state = {};
 
   handleDelete = () => {
@@ -25,9 +27,9 @@ class ProfileCard extends Component {
   render() {
     return (
       <div id="card">
-        <div>
-          <h3 style={{ fontFamily: "Futura", marginLeft: 2 }}>School:</h3>
-          <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
+        <div  className="firstAndLastName">
+          <h3 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h3>
+          <h6 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
             {this.props.campusName.title}
           </h6>
         </div>
@@ -39,11 +41,11 @@ class ProfileCard extends Component {
             {this.props.campusName.studentCount}
           </p>
         </div>
-        <div>
+        <div className="buttons">
           <Delete handleDelete={this.handleDelete} />
-          <EditStudentBtn
+          <EditCampusBtn
             index={this.props.index}
-            studentName={this.props.studentName}
+            campusName={this.props.campusName}
             handleEdit={this.handleEdit}
           />
         </div>
@@ -61,4 +63,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(ProfileCard);
+)(CampusCard);
