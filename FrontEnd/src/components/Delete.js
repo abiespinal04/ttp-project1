@@ -6,7 +6,7 @@ import '../CSS/Delete.css'
 const Delete = (props) => {
 
    const handleDeleteStudent = () => {
-        props.handleDelete(props.student)
+        props.handleDelete()
     }
     return ( 
         <div>

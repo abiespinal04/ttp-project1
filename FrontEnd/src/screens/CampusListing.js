@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
+import Campuses from './Campuses';
 
 
 
@@ -8,7 +9,7 @@ class CampusListing extends Component {
     render() { 
         return ( 
             <div>
-                <Card/>
+                <Campuses/>
             </div>
          );
     }

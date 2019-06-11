@@ -42,7 +42,7 @@ class Student extends Component {
     //  }
 
     if (prevProps.StudentsList.users !== this.props.StudentsList.users) {
-      this.setState({ studentList: this.props.StudentsList });
+      this.setState({ studentList: this.props.StudentsList.users });
     }
   }
   handleStudentList = () => {

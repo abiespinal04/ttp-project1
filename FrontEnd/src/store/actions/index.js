@@ -1,4 +1,11 @@
-import {DELETE_STUDENT,ADD_STUDENT,EDIT_STUDENT} from './types'
+import {
+    DELETE_STUDENT,
+    ADD_STUDENT,
+    EDIT_STUDENT, 
+    EDIT_CAMPUS,
+    ADD_CAMPUS,
+    DELETE_CAMPUS
+} from './types'
 
 export const DeleteStudent = (student) => {
     console.log(student)
@@ -23,4 +30,33 @@ export const AddStudent = (student) => {
         payload:student
     }
 
+}
+
+
+
+//schools actions
+
+export const AddSchool = (school) => {
+
+    return{
+        type:ADD_CAMPUS,
+        payload:school
+    }
+
+}
+
+export const EditCampus = (index,campus) => {
+    console.log("EditStudent action creator", campus)
+    return{
+        type:EDIT_CAMPUS,
+        payload:{index,campus}
+    }
+}
+
+export const DeleteCampus = (campus) => {
+    console.log(campus)
+    return{
+        type:DELETE_CAMPUS,
+        payload:campus
+    }
 }
