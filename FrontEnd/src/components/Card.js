@@ -45,12 +45,7 @@ class Card extends Component {
          else {
             return(
                  this.state.campus.map( campus =>  
-                    <div style={{
-                     margin:20,
-                     borderStyle:'solid', 
-                     borderBottomWidth:3,
-                     borderColor:'black'}}
-                     >
+                    <div class = "mapcard">
                          <Campuses campus={campus}/>
                     </div>
             )

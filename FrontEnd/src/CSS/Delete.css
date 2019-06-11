@@ -1,4 +1,6 @@
 .DeleteContainer{
-    background-color: brown;
+    background-color: #c00000;
     font-size: 20px;
+    border : none;
+    border-radius : 12px;
 }
