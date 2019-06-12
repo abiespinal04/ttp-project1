@@ -49,7 +49,7 @@ class Student extends Component {
     }
   }
   handleStudentList = () => {
-    if (this.props.StudentsList.student === 0) {
+    if (this.state.studentList == 0) {
       return <p>No Students in the database</p>;
     } else {
       return this.state.studentList.map((student, index) => (

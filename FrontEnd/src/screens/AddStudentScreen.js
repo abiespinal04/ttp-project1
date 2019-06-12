@@ -14,7 +14,7 @@ class AddStudentScreen extends Component {
             isDisable:true
      }
 
-    handleAddStudent =  () => {
+    handleAddStudent = () => {
         this.props.AddStudent(this.state)
         // this.props.location.handleAddStudent()
     }

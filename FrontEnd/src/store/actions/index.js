@@ -18,6 +18,11 @@ export const LoadStudents = (students) => {
 
 
 export const DeleteStudent = (student) => {
+   
+   return (dispatch) =>{
+      const {data} = Axios.delete(`http://localhost:3000/students/addStudent/${student.id}`)
+   }
+   
     console.log(student)
     return{
         type:DELETE_STUDENT,
@@ -33,7 +38,7 @@ export const EditStudent = (index,student) => {
     }
 }
 
-export const AddStudent = (student) => {
+export const AddStudent =  (student) => {
     
     return (dispatch) => {
       
