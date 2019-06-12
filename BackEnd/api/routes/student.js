@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
-
+const db = require('../../config/database')
+const Student = require('../models/student')
 
 
 router.get('/', (req,res,next) => {
-
-    res.status(200).json({firstName:'abimael',lastName:'espinal'})
-
+    Student.findAll()
+    .then(student => {
+        console.log(student)
+      res.sendStatus(200)
+    })
+    .catch(err => console.log("error", err))
+    
+    // res.status(200).json({okay:'okay'})
 
 })
 
