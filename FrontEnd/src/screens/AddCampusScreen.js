@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import * as action from '../store/actions'
+import { ADD_STUDENT, ADD_CAMPUS } from '../store/actions/types';
 
 class AddCampusScreen extends Component {
     state = { 
@@ -50,6 +51,14 @@ const mapStateToProps = (state) => {
     return{
         AddCampus: state.CampusesList
     }
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        addCampus : () => dispatch({type:ADD_CAMPUS})
+    }
+
 }
 
 

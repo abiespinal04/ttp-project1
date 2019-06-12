@@ -8,7 +8,7 @@ router.get('/', (req,res,next) => {
     Student.findAll()
     .then(student => {
         console.log(student)
-      res.sendStatus(200)
+      res.status(200).json({student})
     })
     .catch(err => console.log("error", err))
     
@@ -16,6 +16,31 @@ router.get('/', (req,res,next) => {
 
 })
 
+
+router.post('/addStudent', (req,res,next) => {
+    const data = {
+        firstName:'Martha',
+        lastName:'Smith'
+    }
+    let {firstName,lastName} = data
+    firstName = req.body.firstName;
+    lastName= req.body.lastName
+
+    Student.create({
+        firstName,
+        lastName
+    })
+    .then( student => {
+        res.status(200).json(student)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(404).json({message: 'Error at addStudent route'})
+    })
+ 
+  
+
+})
 
 router.get('/:id', (req,res,next) => {
 

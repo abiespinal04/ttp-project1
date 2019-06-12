@@ -80,6 +80,13 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ADD_STUDENT:
+      const studentData = {
+        firstName: '',
+        lastName:''
+      }
+      studentData.firstName = action.payload.firstName;
+      studentData.lastName = action.payload.lastName;
+
       console.log("Inside AddStudentReducer", action.payload);
       state.users.push(action.payload);
       return state;

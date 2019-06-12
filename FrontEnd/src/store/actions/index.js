@@ -7,6 +7,8 @@ import {
     DELETE_CAMPUS
 } from './types'
 
+import Axios from 'axios'
+
 export const DeleteStudent = (student) => {
     console.log(student)
     return{
@@ -24,11 +26,20 @@ export const EditStudent = (index,student) => {
 }
 
 export const AddStudent = (student) => {
-
-    return{
-        type:ADD_STUDENT,
-        payload:student
+    
+    return (dispatch) => {
+        console.log('INSIDE ADD STUDENT ACTION', student)
+        Axios.post('http://localhost:3000/students/addStudent',student)
+        .then(student => dispatch({type:ADD_STUDENT, payload:student.data}))
+            .catch( (error)=>{
+                console.log(error)
+            })
     }
+
+    // return{
+    //     type:ADD_STUDENT,
+    //     payload:student
+    // }
 
 }
 

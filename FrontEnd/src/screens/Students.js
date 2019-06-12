@@ -32,8 +32,13 @@ class Student extends Component {
     );
   }
 
+  handleAddStudent = () => {
+    console.log("Inside handleAddStudent")
+    this.setState({studentList: this.props.StudentsList.users})
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    console.log("New StudentList", this.props.StudentsList);
+    console.log("New StudentList, student update", this.props.StudentsList);
     // if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users){
     //    this.handleNewList(this.props.DeletedStudList.users)
     // }
@@ -51,7 +56,7 @@ class Student extends Component {
     } else {
       return this.state.studentList.map((student, index) => (
         <div>
-          <StudentCard index={index} student={student} />
+          <StudentCard handleAddStudent={this.handleAddStudent} index={index} student={student} />
         </div>
       ));
     }
@@ -70,7 +75,7 @@ class Student extends Component {
               <h1>Students</h1>
             </div>
             <div id="addButton">
-              <AddStudentButton />
+              <AddStudentButton handleAddStudent={this.handleAddStudent}/>
             </div>
           </div>
           <div>{this.handleStudentList()}</div>

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
-import * as action from '../store/actions'
+import Axios from 'axios'
+import * as actions from '../store/actions'
+import { ADD_STUDENT, ADD_CAMPUS } from '../store/actions/types';
 
-class AddCampusScreen extends Component {
+class AddStudentScreen extends Component {
     state = { 
            firstName:'',lastName:''
      }
@@ -12,19 +14,11 @@ class AddCampusScreen extends Component {
             isDisable:true
      }
 
-    handleAddStudent = () => {
-
+    handleAddStudent =  () => {
         this.props.AddStudent(this.state)
-
+        // this.props.location.handleAddStudent()
     }
 
-    // handleDisable = () => {
-    //     if(this.state.firstName ==='' && this.state.lastName===''){
-    //         return this.disable.isDisable === true
-    //     } else {
-    //         return this.disable.isDisable === false
-    //     }
-    // }
     render() { 
         return ( 
             //backgroundColor:'grey',height:800
@@ -53,4 +47,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,action)(AddCampusScreen);
+export default connect(mapStateToProps,actions)(AddStudentScreen);
