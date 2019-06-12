@@ -4,10 +4,27 @@ import {
     EDIT_STUDENT, 
     EDIT_CAMPUS,
     ADD_CAMPUS,
-    DELETE_CAMPUS
+    DELETE_CAMPUS,
+    LOAD_STUDENTS
 } from './types'
 
+import Axios from 'axios'
+
+
+export const LoadStudents = (students) => {
+    console.log("Inside LoadStudent action", students)
+    return { type: LOAD_STUDENTS, payload:students}
+}
+
+
 export const DeleteStudent = (student) => {
+   
+//    return (dispatch) =>{
+//     Axios.delete(`http://localhost:3000/students/addStudent/${student.id}`)
+//     .then((student) => dispatch({type:DELETE_STUDENT, payload:student}))
+
+//    }
+   
     console.log(student)
     return{
         type:DELETE_STUDENT,
@@ -23,12 +40,26 @@ export const EditStudent = (index,student) => {
     }
 }
 
-export const AddStudent = (student) => {
-
-    return{
-        type:ADD_STUDENT,
-        payload:student
+export const AddStudent =  (student) => {
+    
+    return (dispatch) => {
+      
+        Axios.post('http://localhost:3000/students/addStudent',student)
+        .then(student => 
+            {
+                console.log('INSIDE ADD STUDENT ACTION', student.data)
+            dispatch({type:ADD_STUDENT, payload:student.data})
+            })
+            
+            .catch( (error)=>{
+                console.log(error)
+            })
     }
+
+    // return{
+    //     type:ADD_STUDENT,
+    //     payload:student
+    // }
 
 }
 

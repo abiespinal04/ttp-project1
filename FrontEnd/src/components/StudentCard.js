@@ -9,9 +9,10 @@ class StudentCard extends Component {
   state = {};
 
   handleDelete = () => {
-    console.log("HandleDeleteAction", this.props.index);
+    console.log("HandleDeleteAction", this.props.student.id);
     // let newList = this.props.studentList.filter( student => student !== this.props.student)
-    this.props.DeleteStudent(this.props.index);
+    this.props.DeleteStudent(this.props.student);
+    
   };
 
   handleEdit = () => {
