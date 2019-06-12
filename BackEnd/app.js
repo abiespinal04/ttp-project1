@@ -1,16 +1,25 @@
 const express = require('express');
 const app = express();
+const Sequelize = require('sequelize');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const StudentRoute = require('./api/routes/students')
+const StudentRoute = require('./api/routes/student')
 
+//DATABASE
+const db = require('./config/database')
+
+
+//TEST DB
+db.authenticate().
+    then(() => console.log('Database connection successful'))
+    .catch((error) => console.log('Database connection failed', error))
 
 app.use(morgan('dev'));
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
-app.use((req,res,next) => {
+app.use((req, res, next) => {
     /*
     //This header allows access to only the specified client
     // res.header('Access-Control-Allow-Origin', 'http:/my-cool-page.com');
@@ -19,7 +28,7 @@ app.use((req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Acess-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
-    if(req.method === 'OPTIONS'){
+    if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT,POST,PATCH,DELETE,GET');
         return res.status(200).json({});
     }
