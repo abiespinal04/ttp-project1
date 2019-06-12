@@ -19,9 +19,11 @@ export const LoadStudents = (students) => {
 
 export const DeleteStudent = (student) => {
    
-   return (dispatch) =>{
-      const {data} = Axios.delete(`http://localhost:3000/students/addStudent/${student.id}`)
-   }
+//    return (dispatch) =>{
+//     Axios.delete(`http://localhost:3000/students/addStudent/${student.id}`)
+//     .then((student) => dispatch({type:DELETE_STUDENT, payload:student}))
+
+//    }
    
     console.log(student)
     return{
