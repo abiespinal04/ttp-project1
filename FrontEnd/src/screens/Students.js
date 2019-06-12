@@ -16,9 +16,13 @@ class Student extends Component {
   //     this.setState({studentList:data});
   //  }
 
-  componentDidMount() {
+  async componentDidMount() {
     console.log("Inside componentDidMount", this.props.StudentsList);
-    this.setState({ studentList: this.props.StudentsList.users });
+    const {data} = await Axios.get('http://localhost:3000/students')
+    this.props.LoadStudents(data)
+    if(this.state.studentList !== this.props.StudentsList.student){
+    this.setState({ studentList: this.props.StudentsList.student });
+    }
   }
 
   handleNewList = newList => {
@@ -26,46 +30,37 @@ class Student extends Component {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log("ShouldComponentUpdate")
     return (
-      this.state.studentList != nextProps.DeletedStudList.users &&
-      nextState.studentList
-    );
+      nextProps.StudentsList.student !== 
+       this.state.studentList
+     );
   }
 
-  handleAddStudent = () => {
-    console.log("Inside handleAddStudent")
-    this.setState({studentList: this.props.StudentsList.users})
-  }
+  // handleAddStudent = () => {
+  //   console.log("Inside handleAddStudent")
+  //   this.setState({studentList: this.props.StudentsList.users})
+  // }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("New StudentList, student update", this.props.StudentsList);
-    // if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users){
-    //    this.handleNewList(this.props.DeletedStudList.users)
-    // }
-    // if(prevProps.DeletedStudList.users !== this.props.DeletedStudList.users){
-    //     this.handleNewList(this.props.DeletedStudList.users)
-    //  }
-
-    if (prevProps.StudentsList.users !== this.props.StudentsList.users) {
-      this.setState({ studentList: this.props.StudentsList.users });
+    if (prevState.studentList !== this.props.StudentsList.student) {
+      console.log("INSIDE COMPONENT DID UPDATE", this.props.StudentsList.student)
+      this.setState({ studentList: this.props.StudentsList.student });
     }
   }
   handleStudentList = () => {
-    if (this.props.StudentsList === 0) {
+    if (this.props.StudentsList.student === 0) {
       return <p>No Students in the database</p>;
     } else {
       return this.state.studentList.map((student, index) => (
         <div>
-          <StudentCard handleAddStudent={this.handleAddStudent} index={index} student={student} />
+          <StudentCard  handleAddStudent={this.handleAddStudent} index={index} student={student} />
         </div>
       ));
     }
   };
 
-  handleState = () => {
-    console.log("Inside HANDLESTATE", this.props.DeletedStudList.users);
-    this.setState({ studentList: this.props.DeletedStudList.users });
-  };
+
   render() {
     return (
       <React.Fragment>

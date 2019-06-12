@@ -2,6 +2,7 @@
 export const DELETE_STUDENT = 'delete_student';
 export const ADD_STUDENT = 'add_student';
 export const EDIT_STUDENT = 'edit_student';
+export const LOAD_STUDENTS = 'load_students';
 
 //schools
 export const DELETE_CAMPUS = 'delete_campus';
