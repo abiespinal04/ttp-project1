@@ -22,12 +22,16 @@ export default (state = INITIAL_STATE, action) => {
       return {...state, student:newState}
 
     case EDIT_STUDENT: {
+      const newArr = {...state}
+      
       const indexOf = state.student.findIndex( student =>  student.id === action.payload.id)
          console.log("Inside EDIT_STUDENT REDUCER", indexOf);
-      state.student[indexOf].firstName = action.payload.firstName;
-        state.student[indexOf].lastName = action.payload.lastName;
+      newArr.student[indexOf].firstName = action.payload.firstName;
+      newArr.student[indexOf].lastName = action.payload.lastName;
+      newArr.student[indexOf].description = action.payload.description;
+      newArr.student[indexOf].EMPID = action.payload.EMPID;
      
-      return {...action.payload,...state}
+      return {state,...newArr}
     }
 
     default: {
