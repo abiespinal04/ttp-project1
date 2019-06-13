@@ -12,7 +12,8 @@ export default (state = INITIAL_STATE, action) => {
 
     case ADD_STUDENT:
       const newStudent = action.payload
-      return {...state, newStudent};
+      // return {...state, newStudent};
+      return {...state, student: [...state.student, action.payload]}
 
     case DELETE_STUDENT:
       console.log("Inside delete student reducer", action.payload.id)
