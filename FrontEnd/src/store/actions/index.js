@@ -5,7 +5,8 @@ import {
     EDIT_CAMPUS,
     ADD_CAMPUS,
     DELETE_CAMPUS,
-    LOAD_STUDENTS
+    LOAD_STUDENTS,
+    LOAD_CAMPUS
 } from './types'
 
 import Axios from 'axios'
@@ -50,27 +51,38 @@ export const AddStudent = (student) => {
 
 
 //SCHOOLS ACTION CREATOR
-export const AddSchool = (school) => {
 
-    return {
-        type: ADD_CAMPUS,
-        payload: school
-    }
-
+export const LoadCampus = (campus) => {
+    console.log("Inside LoadStudent action", campus)
+    return { type: LOAD_CAMPUS, payload: campus }
 }
 
-export const EditCampus = (index, campus) => {
-    console.log("EditStudent action creator", campus)
-    return {
-        type: EDIT_CAMPUS,
-        payload: { index, campus }
+
+export const AddSchool = (campus) => {
+
+    console.log("AddSchool action creator", campus)
+    return async (dispatch) => {
+
+        const { data } = await Axios.post('http://localhost:3000/campuses/addCampus', campus)
+
+        console.log("ADD CAMPUS ACTION:", data)
+        dispatch({ type: ADD_CAMPUS, payload: data })
+    }
+}
+
+export const EditCampus = (campus) => {
+    console.log("EditCampus action creator", campus)
+    return async (dispatch) => {
+        const { data } = await Axios.patch('http://localhost:3000/campuses/editCampus', campus)
+        console.log("EditCampus action newData:", data)
+        dispatch({ type: EDIT_CAMPUS, payload: campus })
     }
 }
 
 export const DeleteCampus = (campus) => {
-    console.log(campus)
-    return {
-        type: DELETE_CAMPUS,
-        payload: campus
+    return async (dispatch) => {
+        const { data } = await Axios.delete(`http://localhost:3000/campuses/${campus.id}`)
+        console.log(data)
+        dispatch({ type: DELETE_CAMPUS, payload: campus })
     }
 }

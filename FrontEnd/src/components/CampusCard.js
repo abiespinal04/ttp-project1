@@ -16,7 +16,7 @@ class CampusCard extends Component {
     // let newList = this.props.studentList.filter( student => student !== this.props.studentName)
     
     //actions
-    this.props.DeleteCampus(this.props.index);
+    this.props.DeleteCampus(this.props.campusName);
     this.props.handleDelete()
   };
 
@@ -30,7 +30,7 @@ class CampusCard extends Component {
         <div  className="firstAndLastName">
           <h3 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h3>
           <h6 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
-            {this.props.campusName.title}
+            {this.props.campusName.campusName}
           </h6>
         </div>
         <div>
