@@ -18,18 +18,28 @@ export const LoadStudents = (students) => {
 
 
 export const DeleteStudent = (student) => {
-   
+  
+    return async (dispatch) =>{
+   const {data} = await Axios.delete(`http://localhost:3000/students/${student.id}`)
+   console.log(data)
+   dispatch({type:DELETE_STUDENT, payload:student})
+    }
+
 //    return (dispatch) =>{
-//     Axios.delete(`http://localhost:3000/students/addStudent/${student.id}`)
-//     .then((student) => dispatch({type:DELETE_STUDENT, payload:student}))
+//     Axios.delete(`http://localhost:3000/students/${student.id}`)
+//     .then((student) =>{
+//      dispatch({type:DELETE_STUDENT, payload:student})
+//      console.log('student id:',student.id)
+//     })
+//     .catch(err => console.log(err))
 
 //    }
    
-    console.log(student)
-    return{
-        type:DELETE_STUDENT,
-        payload:student
-    }
+    // console.log(student)
+    // return{
+    //     type:DELETE_STUDENT,
+    //     payload:student
+    // }
 }
 
 export const EditStudent = (index,student) => {

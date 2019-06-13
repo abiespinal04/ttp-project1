@@ -57,8 +57,15 @@ router.post('/student', (req,res,next) => {
 
 })
 
-router.delete('/student', (req,res,next) => {
-    res.status(200).json({message:"Deleted student successfully", student:req.body})
+router.delete('/:studentId', (req,res,next) => {
+    const studentID = req.params.studentId
+    Student.destroy({
+        where: {
+            id:studentID
+        }
+    }).then(studentID => res.status(200).json(studentID))
+    .catch(err => console.log("ERROR:",err))
+  
 })
 
 //router.patch('/:productId', (req,res,next) => {
