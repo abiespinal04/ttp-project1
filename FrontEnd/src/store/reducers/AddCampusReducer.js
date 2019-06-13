@@ -14,8 +14,8 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, campus: [...state.campus, action.payload]}
         }
         case DELETE_CAMPUS: {
-            delete state.campus[action.payload]
-            return state
+            const newState = state.campus.filter((campus) => campus.id !== action.payload.id)
+            return {...state, campus:newState}
         }
         case EDIT_CAMPUS: {
             console.log("Inside EDIT_STUDENT REDUCER", action.payload)
