@@ -17,7 +17,7 @@ class StudentCard extends Component {
 
   handleEdit = () => {
     console.log("HandleDeleteAction", this.props.index);
-    this.props.EditStudent(this.props.index);
+    this.props.EditStudent(this.props.student);
   };
   render() {
     return (
@@ -33,6 +33,12 @@ class StudentCard extends Component {
             <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>Last Name</h4>
             <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
               {this.props.student.lastName}
+            </p>
+          </div>
+          <div>
+            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>EMPID</h4>
+            <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
+              {this.props.student.EMPID}
             </p>
           </div>
         </div>
@@ -54,7 +60,7 @@ class StudentCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    DeletedStudent: state.DeletedStudent
+    studentList : state.StudentsList
   };
 };
 

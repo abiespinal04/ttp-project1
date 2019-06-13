@@ -9,6 +9,12 @@ const Student = db.define('student', {
     lastName: {
         type: Sequelize.STRING
     },
+    description: {
+        type: Sequelize.STRING
+    },
+    EMPID: {
+        type: Sequelize.INTEGER
+    }
 
 })
 
