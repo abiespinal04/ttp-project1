@@ -11,34 +11,26 @@ class Student extends Component {
     studentList: []
   };
 
-  // async componentDidMount(){
-  //     const {data} = await Axios.get()
-  //     this.setState({studentList:data});
-  //  }
-
   async componentDidMount() {
     console.log("Inside componentDidMount", this.props.StudentsList);
-    const {data} = await Axios.get('http://localhost:3000/students')
+    const { data } = await Axios.get('http://localhost:3000/students')
     this.props.LoadStudents(data)
-    this.setState({ studentList: this.props.StudentsList.student });
+    if (this.state.studentList !== this.props.StudentsList || this.state.studentList !== this.props.location.studentList) {
+      this.setState({ studentList: this.props.StudentsList.student });
+    }
+
+    // if (this.state.studentList !== this.props.location.studentList) {
+    //   this.setState({ studentList: this.props.location.studentList });
+    // }
+
   }
-
-  handleNewList = newList => {
-    this.setState({ studentList: newList });
-  };
-
   shouldComponentUpdate(nextProps, nextState) {
     console.log("ShouldComponentUpdate")
     return (
-      nextProps.StudentsList.student !== 
-       this.state.studentList
-     );
+      nextProps.StudentsList.student !==
+      this.state.studentList
+    );
   }
-
-  // handleAddStudent = () => {
-  //   console.log("Inside handleAddStudent")
-  //   this.setState({studentList: this.props.StudentsList.users})
-  // }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.studentList !== this.props.StudentsList.student) {
@@ -52,7 +44,7 @@ class Student extends Component {
     } else {
       return this.state.studentList.map((student, index) => (
         <div>
-          <StudentCard  handleAddStudent={this.handleAddStudent} index={index} student={student} />
+          <StudentCard handleAddStudent={this.handleAddStudent} index={index} student={student} />
         </div>
       ));
     }
@@ -68,11 +60,11 @@ class Student extends Component {
               <h1>Students</h1>
             </div>
             <div id="addButton">
-              <AddStudentButton handleAddStudent={this.handleAddStudent}/>
+              <AddStudentButton handleAddStudent={this.handleAddStudent} />
             </div>
           </div>
           <div>{this.handleStudentList()}</div>
-          {/* <button onClick ={this.handleState}> updateState</button> */}
+
         </div>
       </React.Fragment>
     );
@@ -82,7 +74,7 @@ class Student extends Component {
 const mapStateToProps = state => {
   return {
     StudentsList: state.StudentsList,
-    DeletedStudList: state.DeletedStudent
+
   };
 };
 

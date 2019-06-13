@@ -11,18 +11,15 @@ router.get('/', (req, res, next) => {
             res.status(200).json({ student })
         })
         .catch(err => console.log("error", err))
-
-    // res.status(200).json({okay:'okay'})
-
 })
 
 
 router.post('/addStudent', (req, res, next) => {
-    const data = {
-        firstName: 'Martha',
-        lastName: 'Smith'
-    }
-    let { firstName, lastName } = data
+    // const data = {
+    //     firstName: 'Martha',
+    //     lastName: 'Smith'
+    // }
+    // let { firstName, lastName } = data
     firstName = req.body.firstName;
     lastName = req.body.lastName
 
@@ -68,15 +65,13 @@ router.delete('/:studentId', (req, res, next) => {
 
 })
 
-//router.patch('/:productId', (req,res,next) => {
+router.patch('/editStudent', (req, res, next) => {
 
-router.post('/editStudent', (req, res, next) => {
-    //   res.status(200).json(req.params.student)
     const newStudent = req.body
     const studentID = newStudent.id
     const firstname = newStudent.firstName
     const lastname = newStudent.lastName
-    console.log("BACKENNNNNNNNND", newStudent)
+    // console.log("BACKENNNNNNNNND", newStudent)
     Student.update(
         {
             firstName: firstname,

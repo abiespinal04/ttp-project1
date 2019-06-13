@@ -60,10 +60,10 @@ class Campuses extends Component {
                         borderColor: "black"
                     }}
                 >
-                    <CampusCard 
-                    handleDelete = {this.handleDelete} 
-                    index={index} 
-                    campusName={campus} />
+                    <CampusCard
+                        handleDelete={this.handleDelete}
+                        index={index}
+                        campusName={campus} />
                 </div>
             ));
         }
@@ -76,27 +76,27 @@ class Campuses extends Component {
     render() {
         return (
             <React.Fragment>
-            <div id="studentBody">
-              <div id="titlePlusAddStudent">
-                <div
-                  style={{
-                    display: "flex",
-                    marginTop: 10,
-                    marginLeft: 60,
-                    marginRight: "71%"
-                  }}
-                >
-                  <h1>Campuses</h1>
+                <div id="studentBody">
+                    <div id="titlePlusAddStudent">
+                        <div
+                            style={{
+                                display: "flex",
+                                marginTop: 10,
+                                marginLeft: 60,
+                                marginRight: "71%"
+                            }}
+                        >
+                            <h1>Campuses</h1>
+                        </div>
+                        <div id="addButton">
+                            <AddCampusButton />
+                        </div>
+                    </div>
+                    <div>{this.handleCampusList()}</div>
+                    {/* <button onClick ={this.handleState}> updateState</button> */}
                 </div>
-                <div id="addButton">
-                  <AddCampusButton />
-                </div>
-              </div>
-              <div>{this.handleCampusList()}</div>
-              {/* <button onClick ={this.handleState}> updateState</button> */}
-            </div>
-          </React.Fragment>
-            );
+            </React.Fragment>
+        );
     }
 }
 

@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 const EditStudentBtn = props => {
-  const handleEditStudent = () => {
-    props.handleEdit();
-  };
   return (
     <div>
       <Link
