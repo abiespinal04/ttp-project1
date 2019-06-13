@@ -71,7 +71,7 @@ export const AddSchool = (campus) => {
 }
 
 export const EditCampus = (campus) => {
-    console.log("EditCampus action creator", campus)
+    console.log("E  d i t", campus)
     return async (dispatch) => {
         const { data } = await Axios.patch('http://localhost:3000/campuses/editCampus', campus)
         console.log("EditCampus action newData:", data)

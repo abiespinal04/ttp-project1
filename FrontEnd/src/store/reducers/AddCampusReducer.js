@@ -18,10 +18,16 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, campus:newState}
         }
         case EDIT_CAMPUS: {
-            console.log("Inside EDIT_STUDENT REDUCER", action.payload)
-            state.campus[action.payload.index].title = action.payload.campus.title
-            state.campus[action.payload.index].studentCount = action.payload.campus.studentCount
-            return state
+            const newArr = {...state}
+      
+            const indexOf = state.campus.findIndex( campus =>  campus.id === action.payload.id)
+               console.log("Inside EDIT_STUDENT REDUCER", indexOf);
+            newArr.campus[indexOf].campusName = action.payload.campusName;
+            newArr.campus[indexOf].studentCount = action.payload.studentCount;
+            newArr.campus[indexOf].description = action.payload.description;
+            
+           
+            return {state,...newArr}
         }
 
         default: {return state}

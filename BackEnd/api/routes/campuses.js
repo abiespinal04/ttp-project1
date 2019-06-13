@@ -68,8 +68,8 @@ router.patch('/editCampus', (req, res, next) => {
     const newCampus = req.body
     const campusID = newCampus.id
     const campusName = newCampus.campusName
-    const studentCount = newStudent.studentCount
-    const description = newStudent.description
+    const studentCount = newCampus.studentCount
+    const description = newCampus.description
 
     // console.log("BACKENNNNNNNNND", newStudent)
     Campus.update(

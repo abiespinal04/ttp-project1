@@ -20,10 +20,10 @@ class CampusCard extends Component {
     this.props.handleDelete()
   };
 
-  handleEdit = () => {
-    console.log("HandleDeleteAction", this.props.index);
-    this.props.EditCampus(this.props.index);
-  };
+  // handleEdit = () => {
+  //   console.log("HandleDeleteAction", this.props.index);
+  //   this.props.EditCampus(this.props.campusName);
+  // };
   render() {
     return (
       <div id="card">
