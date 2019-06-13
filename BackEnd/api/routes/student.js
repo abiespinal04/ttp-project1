@@ -71,11 +71,15 @@ router.patch('/editStudent', (req, res, next) => {
     const studentID = newStudent.id
     const firstname = newStudent.firstName
     const lastname = newStudent.lastName
+    const newDescription = newStudent.description
+    const newEMPID = newStudent.EMPID
     // console.log("BACKENNNNNNNNND", newStudent)
     Student.update(
         {
             firstName: firstname,
-            lastName: lastname
+            lastName: lastname,
+            EMPID: newEMPID,
+            description: newDescription
         },
 
         { where: { id: studentID } }

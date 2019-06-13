@@ -26,6 +26,9 @@ class EditStudentScreen extends Component {
             <div style={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
                 <input placeholder='first name' onChange={(event) => this.setState({ firstName: event.target.value })} />
                 <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} />
+                <input placeholder='EMPID' onChange={(event) => this.setState({ EMPID: event.target.value })} />
+                <textarea placeholder='description' onChange={(event) => this.setState({ description: event.target.value })} />
+                {/* <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} /> */}
                 {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
                 <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
 
