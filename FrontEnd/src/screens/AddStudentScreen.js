@@ -7,8 +7,8 @@ import { ADD_STUDENT, ADD_CAMPUS } from '../store/actions/types';
 
 class AddStudentScreen extends Component {
     state = { 
-           firstName:'',lastName:'',
-        //    description:''
+           firstName:'',lastName:'',EMPID:'',
+           description:''
      }
 
      disable={
@@ -23,15 +23,16 @@ class AddStudentScreen extends Component {
     render() { 
         return ( 
             //backgroundColor:'grey',height:800
-            <div  style={{marginLeft:'30%', marginTop:10, }}  >
-                <div style={{marginLeft:70}}>
+            <div  style={{marginLeft:'25%', marginTop:10, }}  >
+                <div>
                 <input style={{marginLeft:10 }} placeholder="First Name" onChange={(event) => this.setState({firstName:event.target.value})}/>
                 <input style={{marginLeft:10 }} placeholder="Last Name" onChange={(event) => this.setState({lastName:event.target.value})}/>
+                <input maxLength={8} style={{marginLeft:10 }} placeholder="EMPID" onChange={(event) => this.setState({EMPID:event.target.value})}/>
                 </div>
-                {/* <div style={{marginLeft:10, paddingTop:20 }} >
+                <div style={{marginLeft:25, paddingTop:20 }} >
                 <textarea 
-                 style={{width:500, height:200}} placeholder="discription" onChange={(event) => this.setState({description:event.target.value})}/>
-                </div> */}
+                 style={{width:500, height:200}} placeholder="description" onChange={(event) => this.setState({description:event.target.value})}/>
+                </div>
     
                 <div style={{marginLeft:'25%'}}>
                 <Link
@@ -42,7 +43,7 @@ class AddStudentScreen extends Component {
                 >
                 <button 
                 style={{fontSize:17,backgroundColor:'grey', color:'white'}}
-                disabled={(this.state.firstName ==='' || this.state.lastName ==='')? true:false}
+                disabled={(this.state.firstName ==='' || this.state.lastName ==='' || this.state.EMPID.length < 8)? true:false}
                 onClick = {this.handleAddStudent}
                 >
                  Submit

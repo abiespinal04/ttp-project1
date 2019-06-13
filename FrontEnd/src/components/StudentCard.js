@@ -35,6 +35,12 @@ class StudentCard extends Component {
               {this.props.student.lastName}
             </p>
           </div>
+          <div>
+            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>EMPID</h4>
+            <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
+              {this.props.student.EMPID}
+            </p>
+          </div>
         </div>
         <div className="description">
           <p>{this.props.student.description}</p>
@@ -54,7 +60,7 @@ class StudentCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    DeletedStudent: state.DeletedStudent
+    studentList : state.StudentsList
   };
 };
 

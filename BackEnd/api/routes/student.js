@@ -15,17 +15,17 @@ router.get('/', (req, res, next) => {
 
 
 router.post('/addStudent', (req, res, next) => {
-    // const data = {
-    //     firstName: 'Martha',
-    //     lastName: 'Smith'
-    // }
-    // let { firstName, lastName } = data
+
     firstName = req.body.firstName;
-    lastName = req.body.lastName
+    lastName = req.body.lastName,
+    description = req.body.description,
+    EMPID = req.body.EMPID
 
     Student.create({
         firstName,
-        lastName
+        lastName,
+        description,
+        EMPID
     })
         .then(student => {
             res.status(200).json(student)
