@@ -74,10 +74,6 @@ class Campuses extends Component {
         }
     };
 
-    handleRefresh = () =>{
-
-        {window.location.reload();}
-    }
 
     render() {
 

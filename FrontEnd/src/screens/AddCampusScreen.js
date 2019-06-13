@@ -17,7 +17,7 @@ class AddCampusScreen extends Component {
 
         this.props.AddSchool(this.state)
         
-        this.props.location.handleRefresh()
+      
     }
 
 
