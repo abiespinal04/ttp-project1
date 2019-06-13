@@ -20,9 +20,7 @@ class Student extends Component {
     console.log("Inside componentDidMount", this.props.StudentsList);
     const {data} = await Axios.get('http://localhost:3000/students')
     this.props.LoadStudents(data)
-    if(this.state.studentList !== this.props.StudentsList.student){
     this.setState({ studentList: this.props.StudentsList.student });
-    }
   }
 
   handleNewList = newList => {

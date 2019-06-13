@@ -17,7 +17,7 @@ class StudentCard extends Component {
 
   handleEdit = () => {
     console.log("HandleDeleteAction", this.props.index);
-    this.props.EditStudent(this.props.index);
+    this.props.EditStudent(this.props.student);
   };
   render() {
     return (

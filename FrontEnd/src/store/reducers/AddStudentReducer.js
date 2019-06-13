@@ -79,16 +79,8 @@ export default (state = INITIAL_STATE, action) => {
     case LOAD_STUDENTS: return {...action.payload}
 
     case ADD_STUDENT:
-      const studentData = {
-        firstName: '',
-        lastName:''
-      }
-      studentData.firstName = action.payload.firstName;
-      studentData.lastName = action.payload.lastName;
-
-      console.log("Inside AddStudentReducer", action.payload);
-      state.student.push(action.payload);
-      return state;
+      const newStudent = action.payload
+      return {...state, newStudent};
 
     case DELETE_STUDENT:
       console.log("Inside delete student reducer", action.payload.id)
@@ -100,12 +92,20 @@ export default (state = INITIAL_STATE, action) => {
       return {...state, student:newState}
 
     case EDIT_STUDENT: {
-      console.log("Inside EDIT_STUDENT REDUCER", action.payload);
-      state.student[action.payload.index].firstName =
-        action.payload.student.firstName;
-      state.student[action.payload.index].lastName =
-        action.payload.student.lastName;
-      return state;
+   
+      // let newArray = state.student.filter(student => student.id === action.payload.id)
+
+      const indexOf = state.student.findIndex( student =>  student.id === action.payload.id)
+      // let newArray = [...state.student]
+      // const indexOf = newArray.indexOf(action.payload)
+         console.log("Inside EDIT_STUDENT REDUCER", indexOf);
+      state.student[indexOf].firstName = action.payload.firstName
+      //  console.log("new arry:", newArray);
+        // action.payload.firstName;
+        state.student[indexOf].lastName = action.payload.lastName
+        // action.payload.student.lastName;
+      // console.log("Edit student newStudent:", state.student[indexOf].firstName)
+      return state
     }
 
     default: {

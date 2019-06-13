@@ -48,8 +48,8 @@ class Campuses extends Component {
     //       }
     // }
     handleCampusList = () => {
-        if (this.props.StudentsList === 0) {
-            return <p>No Students in the database</p>;
+        if (this.state.campusesList == 0) {
+            return <p>No campuses in the database</p>;
         } else {
             return this.state.campusesList.map((campus, index) => (
                 <div

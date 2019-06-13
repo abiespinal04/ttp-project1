@@ -42,29 +42,35 @@ export const DeleteStudent = (student) => {
     // }
 }
 
-export const EditStudent = (index,student) => {
+export const EditStudent = (student) => {
     console.log("EditStudent action creator", student)
-    return{
-        type:EDIT_STUDENT,
-        payload:{index,student}
-    }
+    return async (dispatch) =>{
+        const {data} = await Axios.post('http://localhost:3000/students/editStudent', student)
+        console.log("EditStudent action newData:",data)
+        dispatch({type:EDIT_STUDENT, payload:student})
+         }
 }
 
 export const AddStudent =  (student) => {
-    
-    return (dispatch) => {
+    console.log("AddStudent action creator", student)
+    return async (dispatch) => {
       
-        Axios.post('http://localhost:3000/students/addStudent',student)
-        .then(student => 
-            {
-                console.log('INSIDE ADD STUDENT ACTION', student.data)
-            dispatch({type:ADD_STUDENT, payload:student.data})
-            })
-            
-            .catch( (error)=>{
-                console.log(error)
-            })
+        const {data} = await Axios.post('http://localhost:3000/students/addStudent',student)
+
+        console.log("ADD STUDENT ACTION:",data)
+        dispatch({type:ADD_STUDENT, payload:data})
     }
+
+    // Axios.post('http://localhost:3000/students/addStudent',student)
+    // .then(student => 
+    //     {
+    //         console.log('INSIDE ADD STUDENT ACTION', student.data)
+    //     dispatch({type:ADD_STUDENT, payload:student.data})
+    //     })
+        
+    //     .catch( (error)=>{
+    //         console.log(error)
+    //     })
 
     // return{
     //     type:ADD_STUDENT,

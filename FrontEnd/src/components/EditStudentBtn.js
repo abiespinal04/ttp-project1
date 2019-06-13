@@ -10,8 +10,7 @@ const EditStudentBtn = props => {
       <Link
         to={{
           pathname: "/editStudentScreen",
-          state: props.campusName,
-          index: props.index
+          student: props.student,
         }}
       >
         <button
