@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
-const EditStudentBtn = (props) => {
+const EditCampusBtn = (props) => {
 
     const handleEditStudent = () => {
         props.handleEdit()
-     }
-    return ( 
-        
-    <div>
+    }
+    return (
+
+        <div>
 
 
-        <Link to={{
-    pathname: '/editCampusScreen',
-    state: props.campusName,
-    index: props.index
-    }}>
-        <button style={{backgroundColor:'white',margin:5}}
-        // onClick={handleEditStudent}
-        >
-            Edit
+            <Link
+                to={{
+                    pathname: "/editCampusScreen",
+                    campusName: props.campusName
+                    }}>
+                <button style={{ backgroundColor: 'white', margin: 5 }}
+                // onClick={handleEditStudent}
+                >
+                    Edit
         </button>
-        </Link>
-    </div>
+            </Link>
+        </div>
 
-     );
+    );
 }
- 
-export default EditStudentBtn;
+
+export default EditCampusBtn;

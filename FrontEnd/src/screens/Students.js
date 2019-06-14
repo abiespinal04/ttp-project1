@@ -44,7 +44,7 @@ class Student extends Component {
     } else {
       return this.state.studentList.map((student, index) => (
         <div>
-          <StudentCard handleAddStudent={this.handleAddStudent} index={index} student={student} />
+          <StudentCard  index={index} student={student} />
         </div>
       ));
     }
@@ -60,7 +60,7 @@ class Student extends Component {
               <h1>Students</h1>
             </div>
             <div id="addButton">
-              <AddStudentButton handleAddStudent={this.handleAddStudent} />
+              <AddStudentButton  />
             </div>
           </div>
           <div>{this.handleStudentList()}</div>

@@ -4,6 +4,7 @@ import CampusCard from '../components/CampusCard';
 import Delete from '../components/Delete';
 import Edit from '../components/EditCampusBtn';
 import AddCompus from '../components/AddCompusButton';
+import Axios from 'axios'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
 import AddCampusButton from '../components/AddCompusButton';
@@ -14,9 +15,13 @@ class Campuses extends Component {
         campusesList: []
     }
 
-    componentDidMount() {
-        console.log("Inside componentDidMount", this.props.CampusesList);
-        this.setState({ campusesList: this.props.CampusesList.campus });
+    async componentDidMount() {
+        const { data } = await Axios.get('http://localhost:3000/campuses')
+        this.props.LoadCampus(data)
+        if (this.state.campusesList !== this.props.CampusesList.campus) {
+            this.setState({ campusesList: this.props.CampusesList.campus });
+          }
+      
     }
 
     // handleNewList = newList => {
@@ -28,11 +33,18 @@ class Campuses extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log("Inside should componenent update")
+        console.log("ShouldComponentUpdate")
         return (
-            this.state.campusesList !== nextProps.CampusesList
+          nextProps.CampusesList.campus !==
+          this.state.campusesList
         );
-    }
+      }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.campusesList !== this.props.CampusesList.campus) {
+          console.log("INSIDE COMPONENT DID UPDATE", this.props.CampusesList.campus)
+          this.setState({ campusesList: this.props.CampusesList.campus });
+        }
+      }
 
     // componentDidUpdate(prevProps, prevState) {
     //     console.log("INSIDE COMPONENTDIDUPDATE CAMPUSES", this.props.CampusesList);
@@ -69,13 +81,12 @@ class Campuses extends Component {
         }
     };
 
-    // handleState = () => {
-    //     console.log("Inside HANDLESTATE", this.props.CampusesList.campus);
-    //     this.setState({ campusesList: this.props.CampusesList.campus });
-    // };
+
     render() {
+
         return (
             <React.Fragment>
+                
                 <div id="studentBody">
                     <div id="titlePlusAddStudent">
                         <div
@@ -89,7 +100,10 @@ class Campuses extends Component {
                             <h1>Campuses</h1>
                         </div>
                         <div id="addButton">
-                            <AddCampusButton />
+                            <AddCampusButton 
+                                handleRefresh = {this.handleRefresh}
+                            />
+                         
                         </div>
                     </div>
                     <div>{this.handleCampusList()}</div>
