@@ -1,0 +1,20 @@
+.StudentContainer {
+
+    display: flex;
+    background-color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white
+
+}
+
+.StudentContainer p{
+
+    font-family: Futura
+
+}
+
+
+.StudentInfo{
+    flex: 1
+}
+
