@@ -1,3 +1,16 @@
 .homePicture {
   width: 100%;
 }
+
+#homeb{
+  width:100%;
+  background-image: url("../img/ScarySchool.jpeg");
+  background-size:cover;
+  background-position: center center;
+  position : relative;
+  top :0;
+  bottom: 0;
+  height:100vh;
+  z-index:10;
+}
+
