@@ -6,6 +6,7 @@ import * as actions from "../store/actions";
 import "../CSS/StudentCard.css";
 import EditCampusBtn from "./EditCampusBtn";
 import "../CSS/StudentCard.css";
+import {Link} from 'react-router-dom'
 
 class CampusCard extends Component {
   state = {};
@@ -20,13 +21,27 @@ class CampusCard extends Component {
     this.props.handleDelete()
   };
 
-  // handleEdit = () => {
-  //   console.log("HandleDeleteAction", this.props.index);
-  //   this.props.EditCampus(this.props.campusName);
-  // };
+  handleImageURL = () => {
+    if(this.props.campusName.imageURL.length === 0) {
+      return "https://www.w3schools.com/images/picture.jpg"
+    } else { return this.props.campusName.imageURL}
+  }
+
+
+
   render() {
     return (
       <div id="card">
+        <div>
+        <Link
+            to={{
+              pathname: "/campusScreen",
+              campusName: this.props.campusName,
+            }}
+          >
+         <img src={this.handleImageURL()}alt="Mountain" />
+        </Link>
+        </div>
         <div className="firstAndLastName">
           <h3 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h3>
           <h6 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>

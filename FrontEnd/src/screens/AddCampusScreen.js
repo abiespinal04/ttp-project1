@@ -11,7 +11,7 @@ class AddCampusScreen extends Component {
 
      disable={
             isDisable:true
-     }
+     } 
 
     handleCampusStudent = () => {
 
