@@ -10,11 +10,11 @@ class EditHomeScreen extends Component {
     state = {
         campusName: '',
         studentCount: '',
-        description:''
+        description:'',
+        ImageURL:''
     }
 
     componentDidMount() {
-        console.log("SUCK A DICK", this.props.location.campusName)
         this.setState(this.props.location.campusName)
       
     }
@@ -30,6 +30,7 @@ class EditHomeScreen extends Component {
                 <input placeholder='Campus Name' onChange={(event) => this.setState({ campusName: event.target.value })} />
                 <input placeholder='student count' onChange={(event) => this.setState({ studentCount: event.target.value })} />
                 <input placeholder='description' onChange={(event) => this.setState({ description: event.target.value })} />
+                <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
                 {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
                 <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
                 <Link to="campusListing">

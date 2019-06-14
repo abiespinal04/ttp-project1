@@ -11,6 +11,9 @@ const Campus = db.define('campu', {
     },
     description: {
         type: Sequelize.STRING
+    },
+    imageURL: {
+        type: Sequelize.INTEGER
     }
 
 })

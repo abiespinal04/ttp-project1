@@ -6,7 +6,7 @@ import { ADD_STUDENT, ADD_CAMPUS } from '../store/actions/types';
 
 class AddCampusScreen extends Component {
     state = { 
-           campusName:'',studentCount:'', description:''
+           campusName:'',studentCount:'', description:'',imageURL:''
      }
 
      disable={
@@ -35,6 +35,7 @@ class AddCampusScreen extends Component {
                 <input style={{marginLeft:10 }} placeholder="school name" onChange={(event) => this.setState({campusName:event.target.value})}/>
                 <input input type="text" pattern="[0-9]*"  style={{marginLeft:10 }} placeholder="#students" onChange={(event) => this.setState({studentCount:event.target.value.replace(/\D/,'')})}/>
                 <input style={{marginLeft:10 }} placeholder="description" onChange={(event) => this.setState({title:event.target.value})}/>
+                <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
                 <Link to="/campusListing">
                 <button 
                 style={{marginLeft:10,fontSize:17,backgroundColor:'grey', color:'white'}}

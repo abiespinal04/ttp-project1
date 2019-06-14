@@ -12,7 +12,7 @@ class StudentCard extends Component {
     console.log("HandleDeleteAction", this.props.student.id);
     // let newList = this.props.studentList.filter( student => student !== this.props.student)
     this.props.DeleteStudent(this.props.student);
-    
+
   };
 
   handleEdit = () => {
@@ -60,7 +60,7 @@ class StudentCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    studentList : state.StudentsList
+    studentList: state.StudentsList
   };
 };
 

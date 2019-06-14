@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 
 
 const EditCampusBtn = (props) => {
-
-    const handleEditStudent = () => {
-        props.handleEdit()
-    }
     return (
 
         <div>
@@ -16,7 +12,7 @@ const EditCampusBtn = (props) => {
                 to={{
                     pathname: "/editCampusScreen",
                     campusName: props.campusName
-                    }}>
+                }}>
                 <button style={{ backgroundColor: 'white', margin: 5 }}
                 // onClick={handleEditStudent}
                 >

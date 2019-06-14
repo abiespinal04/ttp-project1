@@ -11,10 +11,10 @@ class CampusCard extends Component {
   state = {};
 
   handleDelete = () => {
-    
+
     console.log("HandleDeleteAction", this.props.index, this.props.campusList.campus);
     // let newList = this.props.studentList.filter( student => student !== this.props.studentName)
-    
+
     //actions
     this.props.DeleteCampus(this.props.campusName);
     this.props.handleDelete()
@@ -27,7 +27,7 @@ class CampusCard extends Component {
   render() {
     return (
       <div id="card">
-        <div  className="firstAndLastName">
+        <div className="firstAndLastName">
           <h3 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h3>
           <h6 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
             {this.props.campusName.campusName}
@@ -35,7 +35,7 @@ class CampusCard extends Component {
         </div>
         <div>
           <label style={{ fontFamily: "Futura", marginLeft: 2 }}>
-          #students
+            #students
           </label>
           <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
             {this.props.campusName.studentCount}

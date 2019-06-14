@@ -9,8 +9,9 @@ import * as actions from '../store/actions'
 class EditStudentScreen extends Component {
     state = {
         firstName: '',
-        lastName:'',
-        EMPID: ''
+        lastName: '',
+        EMPID: '',
+        ImageURL:''
     }
     componentDidMount() {
         this.setState(this.props.location.student)
@@ -28,22 +29,23 @@ class EditStudentScreen extends Component {
             <div style={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
                 <input placeholder='first name' onChange={(event) => this.setState({ firstName: event.target.value })} />
                 <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} />
-                <input 
-                maxLength={8}
-                placeholder='EMPID' onChange={(event) => this.setState({ EMPID: event.target.value })} />
+                <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
+                <input
+                    maxLength={8}
+                    placeholder='EMPID' onChange={(event) => this.setState({ EMPID: event.target.value })} />
                 <textarea placeholder='description' onChange={(event) => this.setState({ description: event.target.value })} />
                 {/* <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} /> */}
                 {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
                 <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
 
                 <Link
-                 to={{
-                    pathname: "/students",
-                    studentList: this.props.studentList.student,
-                  }}
+                    to={{
+                        pathname: "/students",
+                        studentList: this.props.studentList.student,
+                    }}
                 >
                     <button
-                    disabled={(this.state.firstName ==='' || this.state.lastName ==='' || this.state.EMPID.length < 8)? true:false}
+                        disabled={(this.state.firstName === '' || this.state.lastName === '' || this.state.EMPID.length < 8) ? true : false}
                         style={{ backgroundColor: 'green' }}
                         onClick={this.handleEditSubmit}
                     >Save Changes</button>
@@ -61,8 +63,8 @@ class EditStudentScreen extends Component {
 
 const mapStateToProps = (state) => {
 
-    return{
-        studentList : state.StudentsList
+    return {
+        studentList: state.StudentsList
     }
 }
 

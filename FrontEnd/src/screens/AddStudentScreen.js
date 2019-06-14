@@ -7,7 +7,7 @@ import { ADD_STUDENT, ADD_CAMPUS } from '../store/actions/types';
 
 class AddStudentScreen extends Component {
     state = { 
-           firstName:'',lastName:'',EMPID:'',
+           firstName:'',lastName:'',EMPID:'', imageURL: '',
            description:''
      }
 
@@ -28,6 +28,7 @@ class AddStudentScreen extends Component {
                 <input style={{marginLeft:10 }} placeholder="First Name" onChange={(event) => this.setState({firstName:event.target.value})}/>
                 <input style={{marginLeft:10 }} placeholder="Last Name" onChange={(event) => this.setState({lastName:event.target.value})}/>
                 <input maxLength={8} style={{marginLeft:10 }} placeholder="EMPID" onChange={(event) => this.setState({EMPID:event.target.value})}/>
+                <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
                 </div>
                 <div style={{marginLeft:25, paddingTop:20 }} >
                 <textarea 
