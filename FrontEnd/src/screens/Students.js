@@ -5,6 +5,7 @@ import * as actions from "../store/actions";
 import "../CSS/Students.css";
 import { connect } from "react-redux";
 import Axios from "axios";
+import {API_URL} from '../utilities/API_URL'
 
 class Student extends Component {
   state = {
@@ -13,7 +14,7 @@ class Student extends Component {
 
   async componentDidMount() {
     console.log("Inside componentDidMount", this.props.StudentsList);
-    const { data } = await Axios.get('http://localhost:3000/students')
+    const { data } = await Axios.get(`${API_URL}students`)
     this.props.LoadStudents(data)
     if (this.state.studentList !== this.props.StudentsList || this.state.studentList !== this.props.location.studentList) {
       this.setState({ studentList: this.props.StudentsList.student });
