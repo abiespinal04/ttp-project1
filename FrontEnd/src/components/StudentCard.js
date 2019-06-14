@@ -22,7 +22,7 @@ class StudentCard extends Component {
   };
 
   handleImageURL = () => {
-    if(this.props.student.imageURL.length === 0) {
+    if(!this.props.student.imageURL) {
       return "https://www.w3schools.com/images/picture.jpg"
     } else { return this.props.student.imageURL}
   }
