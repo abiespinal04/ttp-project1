@@ -26,6 +26,18 @@ label {
   cursor: pointer;
   float: right;
 }
+
+.submitButton:disabled{
+  background-color: #ccc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: default;
+  float: right;
+}
+
+
 .link {
   float: right;
   width: 99%;
