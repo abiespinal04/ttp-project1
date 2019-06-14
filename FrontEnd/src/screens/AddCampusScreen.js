@@ -34,7 +34,7 @@ class AddCampusScreen extends Component {
             <div  style={{marginLeft:10}}  >
                 <input style={{marginLeft:10 }} placeholder="school name" onChange={(event) => this.setState({campusName:event.target.value})}/>
                 <input input type="text" pattern="[0-9]*"  style={{marginLeft:10 }} placeholder="#students" onChange={(event) => this.setState({studentCount:event.target.value.replace(/\D/,'')})}/>
-                <input style={{marginLeft:10 }} placeholder="description" onChange={(event) => this.setState({title:event.target.value})}/>
+                <input style={{marginLeft:10 }} placeholder="description" onChange={(event) => this.setState({description:event.target.value})}/>
                 <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
                 <Link to="/campusListing">
                 <button 
