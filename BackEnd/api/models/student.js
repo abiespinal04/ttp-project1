@@ -14,6 +14,9 @@ const Student = db.define('student', {
     },
     EMPID: {
         type: Sequelize.INTEGER
+    },
+    imageURL: {
+        type: Sequelize.INTEGER
     }
 
 })

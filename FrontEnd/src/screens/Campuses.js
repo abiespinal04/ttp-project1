@@ -20,8 +20,8 @@ class Campuses extends Component {
         this.props.LoadCampus(data)
         if (this.state.campusesList !== this.props.CampusesList.campus) {
             this.setState({ campusesList: this.props.CampusesList.campus });
-          }
-      
+        }
+
     }
 
     // handleNewList = newList => {
@@ -35,16 +35,16 @@ class Campuses extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         console.log("ShouldComponentUpdate")
         return (
-          nextProps.CampusesList.campus !==
-          this.state.campusesList
+            nextProps.CampusesList.campus !==
+            this.state.campusesList
         );
-      }
+    }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.campusesList !== this.props.CampusesList.campus) {
-          console.log("INSIDE COMPONENT DID UPDATE", this.props.CampusesList.campus)
-          this.setState({ campusesList: this.props.CampusesList.campus });
+            console.log("INSIDE COMPONENT DID UPDATE", this.props.CampusesList.campus)
+            this.setState({ campusesList: this.props.CampusesList.campus });
         }
-      }
+    }
 
     // componentDidUpdate(prevProps, prevState) {
     //     console.log("INSIDE COMPONENTDIDUPDATE CAMPUSES", this.props.CampusesList);
@@ -86,7 +86,7 @@ class Campuses extends Component {
 
         return (
             <React.Fragment>
-                
+
                 <div id="studentBody">
                     <div id="titlePlusAddStudent">
                         <div
@@ -100,10 +100,10 @@ class Campuses extends Component {
                             <h1>Campuses</h1>
                         </div>
                         <div id="addButton">
-                            <AddCampusButton 
-                                handleRefresh = {this.handleRefresh}
+                            <AddCampusButton
+                                handleRefresh={this.handleRefresh}
                             />
-                         
+
                         </div>
                     </div>
                     <div>{this.handleCampusList()}</div>

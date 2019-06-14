@@ -18,12 +18,14 @@ router.post('/addCampus', (req, res, next) => {
 
     campusName = req.body.campusName;
     studentCount = req.body.studentCount,
-        description = req.body.description,
+    description = req.body.description,
+    imageURL = req.body.imageURL
 
         Campus.create({
             campusName,
             studentCount,
-            description
+            description,
+            imageURL
         })
             .then(campus => {
                 res.status(200).json(campus)
@@ -70,13 +72,15 @@ router.patch('/editCampus', (req, res, next) => {
     const campusName = newCampus.campusName
     const studentCount = newCampus.studentCount
     const description = newCampus.description
+    const imageURL = newCampus.imageURL
 
     // console.log("BACKENNNNNNNNND", newStudent)
     Campus.update(
         {
             campusName,
             studentCount,
-            description
+            description,
+            imageURL
         },
 
         { where: { id: campusID } }

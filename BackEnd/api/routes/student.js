@@ -19,13 +19,15 @@ router.post('/addStudent', (req, res, next) => {
     firstName = req.body.firstName;
     lastName = req.body.lastName,
     description = req.body.description,
-    EMPID = req.body.EMPID
+    EMPID = req.body.EMPID,
+    imageURL = req.body.imageURL
 
     Student.create({
         firstName,
         lastName,
         description,
-        EMPID
+        EMPID,
+        imageURL
     })
         .then(student => {
             res.status(200).json(student)
@@ -73,13 +75,16 @@ router.patch('/editStudent', (req, res, next) => {
     const lastname = newStudent.lastName
     const newDescription = newStudent.description
     const newEMPID = newStudent.EMPID
+    const newImageURL = newStudent.imageURL
+
     // console.log("BACKENNNNNNNNND", newStudent)
     Student.update(
         {
             firstName: firstname,
             lastName: lastname,
             EMPID: newEMPID,
-            description: newDescription
+            description: newDescription,
+            imageURL : newImageURL
         },
 
         { where: { id: studentID } }
