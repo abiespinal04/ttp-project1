@@ -4,6 +4,7 @@ import EditStudentBtn from "./EditStudentBtn";
 import { connect } from "react-redux";
 import * as actions from "../store/actions";
 import "../CSS/StudentCard.css";
+import {Link} from 'react-router-dom'
 
 class StudentCard extends Component {
   state = {};
@@ -19,9 +20,26 @@ class StudentCard extends Component {
     console.log("HandleDeleteAction", this.props.index);
     this.props.EditStudent(this.props.student);
   };
+
+  handleImageURL = () => {
+    if(this.props.student.imageURL.length === 0) {
+      return "https://www.w3schools.com/images/picture.jpg"
+    } else { return this.props.student.imageURL}
+  }
+
   render() {
     return (
       <div id="card">
+        <div>
+          <Link
+            to={{
+              pathname: "/studentScreen",
+              student: this.props.student,
+            }}
+          >
+            <img src={this.handleImageURL()}alt="Mountain" />
+          </Link>
+        </div>
         <div className="firstAndLastName">
           <div>
             <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h4>
