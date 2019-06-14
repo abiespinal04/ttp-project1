@@ -84,7 +84,9 @@ class AddStudentScreen extends Component {
               type="text"
               id="imgurl"
               placeholder="Provide URL to your image..."
-              onChange={event => this.setState({ EMPID: event.target.value })}
+              onChange={event =>
+                this.setState({ imageURL: event.target.value })
+              }
             />
           </div>
         </div>
