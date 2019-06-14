@@ -4,6 +4,7 @@ import CampusCard from '../components/CampusCard';
 import Delete from '../components/Delete';
 import Edit from '../components/EditCampusBtn';
 import AddCompus from '../components/AddCompusButton';
+import Axios from 'axios'
 import { connect } from 'react-redux'
 import * as actions from '../store/actions'
 import AddCampusButton from '../components/AddCompusButton';
@@ -14,9 +15,13 @@ class Campuses extends Component {
         campusesList: []
     }
 
-    componentDidMount() {
-        console.log("Inside componentDidMount", this.props.CampusesList);
-        this.setState({ campusesList: this.props.CampusesList.campus });
+    async componentDidMount() {
+        const { data } = await Axios.get('http://localhost:3000/campuses')
+        this.props.LoadCampus(data)
+        if (this.state.campusesList !== this.props.CampusesList.campus) {
+            this.setState({ campusesList: this.props.CampusesList.campus });
+        }
+
     }
 
     // handleNewList = newList => {
@@ -28,10 +33,17 @@ class Campuses extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log("Inside should componenent update")
+        console.log("ShouldComponentUpdate")
         return (
-            this.state.campusesList !== nextProps.CampusesList
+            nextProps.CampusesList.campus !==
+            this.state.campusesList
         );
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.campusesList !== this.props.CampusesList.campus) {
+            console.log("INSIDE COMPONENT DID UPDATE", this.props.CampusesList.campus)
+            this.setState({ campusesList: this.props.CampusesList.campus });
+        }
     }
 
     // componentDidUpdate(prevProps, prevState) {
@@ -48,8 +60,8 @@ class Campuses extends Component {
     //       }
     // }
     handleCampusList = () => {
-        if (this.props.StudentsList === 0) {
-            return <p>No Students in the database</p>;
+        if (this.state.campusesList == 0) {
+            return <p>No campuses in the database</p>;
         } else {
             return this.state.campusesList.map((campus, index) => (
                 <div
@@ -60,43 +72,45 @@ class Campuses extends Component {
                         borderColor: "black"
                     }}
                 >
-                    <CampusCard 
-                    handleDelete = {this.handleDelete} 
-                    index={index} 
-                    campusName={campus} />
+                    <CampusCard
+                        handleDelete={this.handleDelete}
+                        index={index}
+                        campusName={campus} />
                 </div>
             ));
         }
     };
 
-    // handleState = () => {
-    //     console.log("Inside HANDLESTATE", this.props.CampusesList.campus);
-    //     this.setState({ campusesList: this.props.CampusesList.campus });
-    // };
+
     render() {
+
         return (
             <React.Fragment>
-            <div id="studentBody">
-              <div id="titlePlusAddStudent">
-                <div
-                  style={{
-                    display: "flex",
-                    marginTop: 10,
-                    marginLeft: 60,
-                    marginRight: "71%"
-                  }}
-                >
-                  <h1>Campuses</h1>
+
+                <div id="studentBody">
+                    <div id="titlePlusAddStudent">
+                        <div
+                            style={{
+                                display: "flex",
+                                marginTop: 10,
+                                marginLeft: 60,
+                                marginRight: "71%"
+                            }}
+                        >
+                            <h1>Campuses</h1>
+                        </div>
+                        <div id="addButton">
+                            <AddCampusButton
+                                handleRefresh={this.handleRefresh}
+                            />
+
+                        </div>
+                    </div>
+                    <div>{this.handleCampusList()}</div>
+                    {/* <button onClick ={this.handleState}> updateState</button> */}
                 </div>
-                <div id="addButton">
-                  <AddCampusButton />
-                </div>
-              </div>
-              <div>{this.handleCampusList()}</div>
-              {/* <button onClick ={this.handleState}> updateState</button> */}
-            </div>
-          </React.Fragment>
-            );
+            </React.Fragment>
+        );
     }
 }
 

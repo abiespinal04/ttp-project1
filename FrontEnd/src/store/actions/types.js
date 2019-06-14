@@ -8,3 +8,4 @@ export const LOAD_STUDENTS = 'load_students';
 export const DELETE_CAMPUS = 'delete_campus';
 export const ADD_CAMPUS = 'add_campus';
 export const EDIT_CAMPUS = 'edit_campus';
+export const LOAD_CAMPUS = 'load_campus';

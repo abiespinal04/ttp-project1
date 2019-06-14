@@ -16,6 +16,8 @@ import ReduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './store/reducers'
 import AddStudentScreen from './screens/AddStudentScreen'
+import StudentScreen from './screens/StudentScreen';
+import CampusScreen from './screens/CampusScreen';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
     <Route path='/editCampusScreen' component={EditScreen}/>
     <Route path='/campusListing' component={CampusListing}/>
     <Route path='/students' component={Students}/>
+    <Route path='/studentScreen' component={StudentScreen}/>
+    <Route path='/campusScreen' component={CampusScreen}/>
     <Route path='/addCampuses' component={AddCampusScreen}/>
     <Route path='/addStudent' component={AddStudentScreen}/>
     <Route path='/' component={Home}/>
