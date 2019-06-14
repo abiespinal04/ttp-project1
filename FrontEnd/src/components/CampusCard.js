@@ -22,7 +22,7 @@ class CampusCard extends Component {
   };
 
   handleImageURL = () => {
-    if(this.props.campusName.imageURL.length === 0) {
+    if(!this.props.campusName.imageURL) {
       return "https://www.w3schools.com/images/picture.jpg"
     } else { return this.props.campusName.imageURL}
   }
