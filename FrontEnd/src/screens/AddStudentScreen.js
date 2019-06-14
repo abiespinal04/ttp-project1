@@ -38,7 +38,7 @@ class AddStudentScreen extends Component {
               id="fname"
               name="firstname"
               placeholder="Your
-          name.."
+          name..."
               onChange={event =>
                 this.setState({ firstName: event.target.value })
               }
@@ -55,7 +55,7 @@ class AddStudentScreen extends Component {
               id="lname"
               name="lastname"
               placeholder="Your last
-          name.."
+          name..."
               onChange={event =>
                 this.setState({ lastName: event.target.value })
               }
@@ -64,15 +64,13 @@ class AddStudentScreen extends Component {
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="fname">EMPID</label>
+            <label for="EMPID">EMPID</label>
           </div>
           <div class="col-75">
             <input
               type="text"
-              id="fname"
-              name="firstname"
-              placeholder="Your
-          name.."
+              id="EMPID"
+              placeholder="Your EMPID..."
               onChange={event => this.setState({ EMPID: event.target.value })}
             />
           </div>
@@ -84,23 +82,21 @@ class AddStudentScreen extends Component {
           <div class="col-75">
             <input
               type="text"
-              id="fname"
-              name="firstname"
-              placeholder="Your
-          name.."
+              id="imgurl"
+              placeholder="Provide URL to your image..."
               onChange={event => this.setState({ EMPID: event.target.value })}
             />
           </div>
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="subject">Subject</label>
+            <label for="About">About</label>
           </div>
           <div class="col-75">
             <textarea
-              id="subject"
-              name="subject"
-              placeholder="Write something.."
+              id="About"
+              name="About"
+              placeholder="Write something about yourself.."
               style={{ height: "200px" }}
               onChange={event =>
                 this.setState({ description: event.target.value })
@@ -110,13 +106,14 @@ class AddStudentScreen extends Component {
         </div>
         <div class="row">
           <Link
+            className="link"
             to={{
               pathname: "/students",
               studentList: this.props.studentList.student
             }}
           >
             <button
-              style={{ fontSize: 17, backgroundColor: "grey", color: "white" }}
+              className="submitButton"
               disabled={
                 this.state.firstName === "" ||
                 this.state.lastName === "" ||

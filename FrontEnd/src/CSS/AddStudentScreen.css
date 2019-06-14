@@ -12,12 +12,12 @@ textarea {
 
 /* Style the label to display next to the inputs */
 label {
-  padding: 12px 12px 12px 0;
+  padding: 12px;
   display: inline-block;
 }
 
 /* Style the submit button */
-input[type="submit"] {
+.submitButton {
   background-color: #4caf50;
   color: white;
   padding: 12px 20px;
@@ -25,6 +25,10 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+}
+.link {
+  float: right;
+  width: 99%;
 }
 
 /* Style the container */
@@ -44,7 +48,7 @@ input[type="submit"] {
 /* Floating column for inputs: 75% width */
 .col-75 {
   float: left;
-  width: 75%;
+  width: 74%;
   margin-top: 6px;
 }
 
@@ -59,7 +63,7 @@ input[type="submit"] {
 @media screen and (max-width: 600px) {
   .col-25,
   .col-75,
-  button {
+  .label {
     width: 100%;
     margin-top: 0;
   }
