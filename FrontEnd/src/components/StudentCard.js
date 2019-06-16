@@ -31,7 +31,7 @@ class StudentCard extends Component {
   render() {
     return (
       <div id="card">
-        <div>
+        <div className="studentPic">
           <Link
             to={{
               pathname: "/studentScreen",
@@ -39,7 +39,7 @@ class StudentCard extends Component {
             }}
           >
             <img
-              style={{ maxHeight: 300, maxWidth: 200 }}
+              style={{ maxHeight: 250, maxWidth: 200 }}
               src={this.handleImageURL()}
               alt="Mountain"
             />
@@ -47,22 +47,16 @@ class StudentCard extends Component {
         </div>
         <div className="firstAndLastName">
           <div>
-            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>First Name</h4>
-            <h6 style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-              {this.props.student.firstName}
-            </h6>
+            <h6>First Name</h6>
+            <h3>{this.props.student.firstName}</h3>
           </div>
           <div>
-            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>Last Name</h4>
-            <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-              {this.props.student.lastName}
-            </p>
+            <h6>Last Name</h6>
+            <h3>{this.props.student.lastName}</h3>
           </div>
           <div>
-            <h4 style={{ fontFamily: "Futura", marginLeft: 2 }}>EMPID</h4>
-            <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-              {this.props.student.EMPID}
-            </p>
+            <h6>EMPID</h6>
+            <h3>{this.props.student.EMPID}</h3>
           </div>
         </div>
         <div className="description">
