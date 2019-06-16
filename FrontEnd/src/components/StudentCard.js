@@ -4,7 +4,7 @@ import EditStudentBtn from "./EditStudentBtn";
 import { connect } from "react-redux";
 import * as actions from "../store/actions";
 import "../CSS/StudentCard.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 class StudentCard extends Component {
   state = {};
@@ -13,7 +13,6 @@ class StudentCard extends Component {
     console.log("HandleDeleteAction", this.props.student.id);
     // let newList = this.props.studentList.filter( student => student !== this.props.student)
     this.props.DeleteStudent(this.props.student);
-
   };
 
   handleEdit = () => {
@@ -22,10 +21,12 @@ class StudentCard extends Component {
   };
 
   handleImageURL = () => {
-    if(!this.props.student.imageURL) {
-      return "https://www.w3schools.com/images/picture.jpg"
-    } else { return this.props.student.imageURL}
-  }
+    if (!this.props.student.imageURL) {
+      return "https://www.w3schools.com/images/picture.jpg";
+    } else {
+      return this.props.student.imageURL;
+    }
+  };
 
   render() {
     return (
@@ -34,10 +35,14 @@ class StudentCard extends Component {
           <Link
             to={{
               pathname: "/studentScreen",
-              student: this.props.student,
+              student: this.props.student
             }}
           >
-            <img src={this.handleImageURL()}alt="Mountain" />
+            <img
+              style={{ maxHeight: 300, maxWidth: 200 }}
+              src={this.handleImageURL()}
+              alt="Mountain"
+            />
           </Link>
         </div>
         <div className="firstAndLastName">
