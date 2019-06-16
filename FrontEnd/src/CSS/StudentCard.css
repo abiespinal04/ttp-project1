@@ -15,10 +15,12 @@ h6 {
   font-family: Futura;
   margin-left: 2;
 }
+h6 {
+  color: rgb(97, 97, 97);
+}
 
 /* --------- First Section --------- */
 .studentPic {
-  border: hotpink solid 1px;
   display: flex;
   justify-content: center;
   min-width: 200px;

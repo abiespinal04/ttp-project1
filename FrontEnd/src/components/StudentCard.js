@@ -47,16 +47,16 @@ class StudentCard extends Component {
         </div>
         <div className="firstAndLastName">
           <div>
-            <h4>First Name</h4>
-            <h6>{this.props.student.firstName}</h6>
+            <h6>First Name</h6>
+            <h2>{this.props.student.firstName}</h2>
           </div>
           <div>
-            <h4>Last Name</h4>
-            <p>{this.props.student.lastName}</p>
+            <h6>Last Name</h6>
+            <h2>{this.props.student.lastName}</h2>
           </div>
           <div>
-            <h4>EMPID</h4>
-            <p>{this.props.student.EMPID}</p>
+            <h6>EMPID</h6>
+            <h2>{this.props.student.EMPID}</h2>
           </div>
         </div>
         <div className="description">
