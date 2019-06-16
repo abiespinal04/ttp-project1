@@ -1,58 +1,130 @@
-import React, { Component } from 'react';
-import Axios from 'axios'
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
-import * as actions from '../store/actions'
-
-
+import React, { Component } from "react";
+import Axios from "axios";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import * as actions from "../store/actions";
 
 class EditStudentScreen extends Component {
-    state = {
-        firstName: '',
-        lastName: '',
-        EMPID: '',
-        ImageURL:''
-    }
-    componentDidMount() {
-        this.setState(this.props.location.student)
-    }
+  state = {
+    firstName: "",
+    lastName: "",
+    EMPID: "",
+    ImageURL: "",
+    description: ""
+  };
+  componentDidMount() {
+    this.setState(this.props.location.student);
+  }
 
-    handleEditSubmit = () => {
-        this.props.EditStudent(this.state)
+  handleEditSubmit = () => {
+    this.props.EditStudent(this.state);
+  };
 
-    }
-
-    render() {
-
-        return (
-
-            <div style={{ display: 'flex', flexDirection: 'column', width: '50%' }}>
-                <input placeholder='first name' onChange={(event) => this.setState({ firstName: event.target.value })} />
-                <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} />
-                <input style={{marginLeft:10 }} placeholder="imageURL" onChange={(event) => this.setState({imageURL:event.target.value})}/>
-                <input
-                    maxLength={8}
-                    placeholder='EMPID' onChange={(event) => this.setState({ EMPID: event.target.value })} />
-                <textarea placeholder='description' onChange={(event) => this.setState({ description: event.target.value })} />
-                {/* <input placeholder='last name' onChange={(event) => this.setState({ lastName: event.target.value })} /> */}
-                {/* <input placeholder='ImageURL' onChange={(event)=> this.setState({imageURL:event.target.value})}/>
-                <textarea placeholder='Description' onChange={(event)=> this.setState({description:event.target.value})}/> */}
-
-                <Link
-                    to={{
-                        pathname: "/students",
-                        studentList: this.props.studentList.student,
-                    }}
-                >
-                    <button
-                        disabled={(this.state.firstName === '' || this.state.lastName === '' || this.state.EMPID.length < 8) ? true : false}
-                        style={{ backgroundColor: 'green' }}
-                        onClick={this.handleEditSubmit}
-                    >Save Changes</button>
-                </Link>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-25">
+            <label>First Name</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="fname"
+              defaultValue={this.props.location.student.firstName}
+              onChange={event =>
+                this.setState({ firstName: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>Last Name</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="lname"
+              defaultValue={this.props.location.student.lastName}
+              placeholder="Your last
+          name..."
+              onChange={event =>
+                this.setState({ lastName: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>EMPID</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="EMPID"
+              defaultValue={this.props.location.student.EMPID}
+              onChange={event => this.setState({ EMPID: event.target.value })}
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>Image URL</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="imgurl"
+              defaultValue={this.props.location.student.imageURL}
+              onChange={event =>
+                this.setState({ imageURL: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>About</label>
+          </div>
+          <div className="col-75">
+            <textarea
+              id="About"
+              name="About"
+              defaultValue={this.props.location.student.description}
+              style={{ height: "200px" }}
+              onChange={event =>
+                this.setState({ description: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <Link
+            className="link"
+            to={{
+              pathname: "/students",
+              studentList: this.props.studentList.student
+            }}
+          >
+            <button
+              className="submitButton"
+              disabled={
+                this.state.firstName === "" ||
+                this.state.lastName === "" ||
+                this.state.EMPID.length < 8
+                  ? true
+                  : false
+              }
+              onClick={this.handleEditSubmit}
+            >
+              Submit
+            </button>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 
 // const mapStateToProps = (state) => {
@@ -61,11 +133,13 @@ class EditStudentScreen extends Component {
 //     }
 // }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+  return {
+    studentList: state.StudentsList
+  };
+};
 
-    return {
-        studentList: state.StudentsList
-    }
-}
-
-export default connect(mapStateToProps, actions)(EditStudentScreen); 
+export default connect(
+  mapStateToProps,
+  actions
+)(EditStudentScreen);
