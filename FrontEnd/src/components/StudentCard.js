@@ -48,15 +48,15 @@ class StudentCard extends Component {
         <div className="firstAndLastName">
           <div>
             <h6>First Name</h6>
-            <h2>{this.props.student.firstName}</h2>
+            <h3>{this.props.student.firstName}</h3>
           </div>
           <div>
             <h6>Last Name</h6>
-            <h2>{this.props.student.lastName}</h2>
+            <h3>{this.props.student.lastName}</h3>
           </div>
           <div>
             <h6>EMPID</h6>
-            <h2>{this.props.student.EMPID}</h2>
+            <h3>{this.props.student.EMPID}</h3>
           </div>
         </div>
         <div className="description">
