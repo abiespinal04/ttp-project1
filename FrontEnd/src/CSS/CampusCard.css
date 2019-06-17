@@ -1,0 +1,60 @@
+#card {
+  border: 1px solid rgb(255, 255, 255);
+  background: rgba(37, 37, 37, 0.9);
+  margin: 20px;
+  padding: 1%;
+  display: flex;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* --------- Universal settings --------- */
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+  text-shadow: 1px 1px 2px black;
+}
+h4,
+h6 {
+  font-family: Futura;
+  margin-left: 2;
+}
+h6 {
+  color: rgb(97, 97, 97);
+}
+
+/* --------- First Section --------- */
+.campusPic {
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+  margin: auto;
+}
+
+/* --------- Second Section --------- */
+.firstAndLastName {
+  min-width: 15rem;
+  max-width: 15rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ---------  Third section --------- */
+.description {
+  width: 80%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+/* --------- Fourth Section --------- */
+.buttons {
+  margin-left: 15px;
+  min-width: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
