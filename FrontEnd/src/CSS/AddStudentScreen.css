@@ -51,6 +51,7 @@ label {
 
 /* Style the container */
 .container {
+  margin-top: 20px;
   max-width: 60%;
   border-radius: 5px;
   background-color: #aaaaaa;
