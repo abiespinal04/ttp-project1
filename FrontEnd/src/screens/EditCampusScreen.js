@@ -14,7 +14,7 @@ class EditHomeScreen extends Component {
 
   componentDidMount() {
     this.setState(this.props.location.campusName);
-    console.log(this.props.location.campusName);
+    console.log(this.props.location);
   }
 
   handleEditSubmit = () => {
