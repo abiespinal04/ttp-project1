@@ -14,7 +14,6 @@ class EditHomeScreen extends Component {
 
   componentDidMount() {
     this.setState(this.props.location.campusName);
-    console.log(this.props.location);
   }
 
   handleEditSubmit = () => {
@@ -34,7 +33,7 @@ class EditHomeScreen extends Component {
               type="text"
               id="campusName"
               name="campusName"
-              defaultValue={this.props.location.campusName}
+              defaultValue={this.props.location.campusName.campusName}
               onChange={event =>
                 this.setState({ campusName: event.target.value })
               }
@@ -50,7 +49,7 @@ class EditHomeScreen extends Component {
               type="text"
               id="studentCount"
               name="studentCount"
-              placeholder="Enter student count..."
+              defaultValue={this.props.location.campusName.studentCount}
               onChange={event =>
                 this.setState({ studentCount: event.target.value })
               }
@@ -65,7 +64,7 @@ class EditHomeScreen extends Component {
             <input
               type="text"
               id="imgurl"
-              placeholder="Provide URL to your image..."
+              defaultValue={this.props.location.campusName.imageURL}
               onChange={event =>
                 this.setState({ imageURL: event.target.value })
               }
