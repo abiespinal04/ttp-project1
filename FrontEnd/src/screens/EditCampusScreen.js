@@ -84,7 +84,7 @@ class EditHomeScreen extends Component {
                   ? true
                   : false
               }
-              onClick={this.handleCampusStudent}
+              onClick={this.handleEditSubmit}
             >
               Submit
             </button>
