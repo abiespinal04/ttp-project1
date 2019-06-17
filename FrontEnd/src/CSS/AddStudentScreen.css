@@ -7,7 +7,12 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  resize: vertical;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+  resize: none;
+  height: 100px;
 }
 
 /* Style the label to display next to the inputs */
@@ -25,9 +30,10 @@ label {
   border-radius: 4px;
   cursor: pointer;
   float: right;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.submitButton:disabled{
+.submitButton:disabled {
   background-color: #ccc;
   color: white;
   padding: 12px 20px;
@@ -35,8 +41,8 @@ label {
   border-radius: 4px;
   cursor: default;
   float: right;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
 }
-
 
 .link {
   float: right;
@@ -45,8 +51,10 @@ label {
 
 /* Style the container */
 .container {
+  margin-top: 20px;
+  max-width: 60%;
   border-radius: 5px;
-  background-color: #dddddd;
+  background-color: #aaaaaa;
   padding: 20px;
 }
 

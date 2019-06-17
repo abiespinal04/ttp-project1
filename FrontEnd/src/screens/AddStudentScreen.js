@@ -21,18 +21,17 @@ class AddStudentScreen extends Component {
 
   handleAddStudent = () => {
     this.props.AddStudent(this.state);
-    // this.props.location.handleAddStudent()
   };
 
   render() {
     return (
-      //backgroundColor:'grey',height:800
-      <div class="container">
-        <div class="row">
-          <div class="col-25">
+      <div className="container">
+        <h1>Add Student Information</h1>
+        <div className="row">
+          <div className="col-25">
             <label for="fname">First Name</label>
           </div>
-          <div class="col-75">
+          <div className="col-75">
             <input
               type="text"
               id="fname"
@@ -45,11 +44,11 @@ class AddStudentScreen extends Component {
             />
           </div>
         </div>
-        <div class="row">
-          <div class="col-25">
+        <div className="row">
+          <div className="col-25">
             <label for="lname">Last Name</label>
           </div>
-          <div class="col-75">
+          <div className="col-75">
             <input
               type="text"
               id="lname"
@@ -62,11 +61,11 @@ class AddStudentScreen extends Component {
             />
           </div>
         </div>
-        <div class="row">
-          <div class="col-25">
+        <div className="row">
+          <div className="col-25">
             <label for="EMPID">EMPID</label>
           </div>
-          <div class="col-75">
+          <div className="col-75">
             <input
               type="text"
               id="EMPID"
@@ -75,11 +74,11 @@ class AddStudentScreen extends Component {
             />
           </div>
         </div>
-        <div class="row">
-          <div class="col-25">
+        <div className="row">
+          <div className="col-25">
             <label for="fname">Image URL</label>
           </div>
-          <div class="col-75">
+          <div className="col-75">
             <input
               type="text"
               id="imgurl"
@@ -90,23 +89,22 @@ class AddStudentScreen extends Component {
             />
           </div>
         </div>
-        <div class="row">
-          <div class="col-25">
+        <div className="row">
+          <div className="col-25">
             <label for="About">About</label>
           </div>
-          <div class="col-75">
+          <div className="col-75">
             <textarea
               id="About"
               name="About"
               placeholder="Write something about yourself.."
-              style={{ height: "200px" }}
               onChange={event =>
                 this.setState({ description: event.target.value })
               }
             />
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           <Link
             className="link"
             to={{
