@@ -21,12 +21,12 @@ class AddStudentScreen extends Component {
 
   handleAddStudent = () => {
     this.props.AddStudent(this.state);
-    // this.props.location.handleAddStudent()
   };
 
   render() {
     return (
       <div className="container">
+        <h1>Add Student Information</h1>
         <div className="row">
           <div className="col-25">
             <label for="fname">First Name</label>

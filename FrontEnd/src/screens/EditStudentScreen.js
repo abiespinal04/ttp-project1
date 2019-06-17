@@ -3,6 +3,7 @@ import Axios from "axios";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../store/actions";
+import "../CSS/StudentCard.css"; //using the same styling as studentCard
 
 class EditStudentScreen extends Component {
   state = {
@@ -23,6 +24,7 @@ class EditStudentScreen extends Component {
   render() {
     return (
       <div className="container">
+        <h1>Edit Student Information</h1>
         <div className="row">
           <div className="col-25">
             <label>First Name</label>
