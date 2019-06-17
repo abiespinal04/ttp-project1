@@ -11,13 +11,12 @@ import Students from '../src/screens/Students'
 import EditScreen from './screens/EditCampusScreen'
 import EditStudentScreen from '../src/screens/EditStudentScreen'
 import {createStore, applyMiddleware} from 'redux';
-import {connect} from 'react-redux'
 import ReduxThunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './store/reducers'
 import AddStudentScreen from './screens/AddStudentScreen'
-import StudentScreen from './screens/StudentScreen';
-import CampusScreen from './screens/CampusScreen';
+import StudentScreen from './screens/StudentInfo';
+import CampusScreen from './screens/CampusInfo';
 
 
 function App() {
