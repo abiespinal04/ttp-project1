@@ -4,6 +4,7 @@
   margin: 20px;
   padding: 1%;
   display: flex;
+  justify-content: space-around;
   box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
   color: white;
 }
@@ -11,7 +12,7 @@
 /* --------- Universal settings --------- */
 h1 {
   text-align: center;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   text-shadow: 1px 1px 2px black;
 }
 h4,
@@ -27,12 +28,13 @@ h6 {
 .campusPic {
   display: flex;
   justify-content: center;
+  align-content: center;
   min-width: 200px;
-  margin: auto;
+  max-width: 300px;
 }
 
 /* --------- Second Section --------- */
-.firstAndLastName {
+.schoolNameAndCount {
   min-width: 15rem;
   max-width: 15rem;
   text-align: center;
@@ -42,14 +44,7 @@ h6 {
 }
 
 /* ---------  Third section --------- */
-.description {
-  width: 80%;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-}
 
-/* --------- Fourth Section --------- */
 .buttons {
   margin-left: 15px;
   min-width: 8%;

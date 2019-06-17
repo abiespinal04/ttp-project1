@@ -48,19 +48,19 @@ class CampusCard extends Component {
             />
           </Link>
         </div>
-        <div className="schoolName">
-          <h6 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h6>
-          <h3 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
-            {this.props.campusName.campusName}
-          </h3>
-        </div>
-        <div>
-          <label style={{ fontFamily: "Futura", marginLeft: 2 }}>
-            #students
-          </label>
-          <p style={{ fontFamily: "Papyrus", marginLeft: 2 }}>
-            {this.props.campusName.studentCount}
-          </p>
+        <div className="schoolNameAndCount">
+          <div>
+            <h6 style={{ fontFamily: "Futura", marginLeft: 20 }}>School:</h6>
+            <h3 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
+              {this.props.campusName.campusName}
+            </h3>
+          </div>
+          <div>
+            <h6 style={{ fontFamily: "Futura", marginLeft: 20 }}>#Students:</h6>
+            <h3 style={{ fontFamily: "Papyrus", marginLeft: 20 }}>
+              {this.props.campusName.studentCount}{" "}
+            </h3>
+          </div>
         </div>
         <div className="buttons">
           <Delete handleDelete={this.handleDelete} />

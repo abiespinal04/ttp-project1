@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../CSS/Campuses.css";
+import "../CSS/Students.css";
 import CampusCard from "../components/CampusCard";
 import Delete from "../components/Delete";
 import Edit from "../components/EditCampusBtn";
@@ -63,14 +63,7 @@ class Campuses extends Component {
       return <p>No campuses in the database</p>;
     } else {
       return this.state.campusesList.map((campus, index) => (
-        <div
-          style={{
-            margin: 20,
-            borderStyle: "solid",
-            borderBottomWidth: 3,
-            borderColor: "black"
-          }}
-        >
+        <div>
           <CampusCard
             handleDelete={this.handleDelete}
             index={index}
@@ -86,14 +79,7 @@ class Campuses extends Component {
       <React.Fragment>
         <div id="studentBody">
           <div id="titlePlusAddStudent">
-            <div
-              style={{
-                display: "flex",
-                marginTop: 10,
-                marginLeft: 60,
-                marginRight: "71%"
-              }}
-            >
+            <div>
               <h1>Campuses</h1>
             </div>
             <div id="addButton">
@@ -101,7 +87,6 @@ class Campuses extends Component {
             </div>
           </div>
           <div>{this.handleCampusList()}</div>
-          {/* <button onClick ={this.handleState}> updateState</button> */}
         </div>
       </React.Fragment>
     );
