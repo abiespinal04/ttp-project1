@@ -29,7 +29,7 @@ class AddStudentScreen extends Component {
         <h1>Add Student Information</h1>
         <div className="row">
           <div className="col-25">
-            <label for="fname">First Name</label>
+            <label>First Name</label>
           </div>
           <div className="col-75">
             <input
@@ -46,7 +46,7 @@ class AddStudentScreen extends Component {
         </div>
         <div className="row">
           <div className="col-25">
-            <label for="lname">Last Name</label>
+            <label>Last Name</label>
           </div>
           <div className="col-75">
             <input
@@ -63,7 +63,7 @@ class AddStudentScreen extends Component {
         </div>
         <div className="row">
           <div className="col-25">
-            <label for="EMPID">EMPID</label>
+            <label>EMPID</label>
           </div>
           <div className="col-75">
             <input
@@ -76,7 +76,7 @@ class AddStudentScreen extends Component {
         </div>
         <div className="row">
           <div className="col-25">
-            <label for="fname">Image URL</label>
+            <label>Image URL</label>
           </div>
           <div className="col-75">
             <input
@@ -91,7 +91,7 @@ class AddStudentScreen extends Component {
         </div>
         <div className="row">
           <div className="col-25">
-            <label for="About">About</label>
+            <label>About</label>
           </div>
           <div className="col-75">
             <textarea
