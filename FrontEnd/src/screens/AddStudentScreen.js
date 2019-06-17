@@ -98,7 +98,6 @@ class AddStudentScreen extends Component {
               id="About"
               name="About"
               placeholder="Write something about yourself.."
-              style={{ height: "200px" }}
               onChange={event =>
                 this.setState({ description: event.target.value })
               }

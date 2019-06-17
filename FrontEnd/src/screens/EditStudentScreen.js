@@ -92,9 +92,8 @@ class EditStudentScreen extends Component {
           <div className="col-75">
             <textarea
               id="About"
-              name="About"
               defaultValue={this.props.location.student.description}
-              style={{ height: "200px" }}
+              style={{ height: "100px" }}
               onChange={event =>
                 this.setState({ description: event.target.value })
               }
