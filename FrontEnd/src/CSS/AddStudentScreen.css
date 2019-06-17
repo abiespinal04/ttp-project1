@@ -21,6 +21,10 @@ label {
   display: inline-block;
 }
 
+h1 {
+  padding-bottom: 20px;
+}
+
 /* Style the submit button */
 .submitButton {
   background-color: #4caf50;

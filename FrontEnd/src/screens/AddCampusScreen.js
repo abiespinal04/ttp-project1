@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as action from "../store/actions";
 import { ADD_STUDENT, ADD_CAMPUS } from "../store/actions/types";
+import "../CSS/AddStudentScreen.css";
 
 class AddCampusScreen extends Component {
   state = {
@@ -29,48 +30,74 @@ class AddCampusScreen extends Component {
   // }
   render() {
     return (
-      //backgroundColor:'grey',height:800
-      <div style={{ marginLeft: 10 }}>
-        <input
-          style={{ marginLeft: 10 }}
-          placeholder="school name"
-          onChange={event => this.setState({ campusName: event.target.value })}
-        />
-        <input
-          input
-          type="text"
-          pattern="[0-9]*"
-          style={{ marginLeft: 10 }}
-          placeholder="#students"
-          onChange={event =>
-            this.setState({
-              studentCount: event.target.value.replace(/\D/, "")
-            })
-          }
-        />
-        <input
-          style={{ marginLeft: 10 }}
-          placeholder="imageURL"
-          onChange={event => this.setState({ imageURL: event.target.value })}
-        />
-        <Link to="/campusListing">
-          <button
-            style={{
-              marginLeft: 10,
-              fontSize: 17,
-              backgroundColor: "grey",
-              color: "white"
-            }}
-            disabled={
-              this.state.title === "" || this.state.studentCount === ""
-                ? true
-                : false
-            }
-            onClick={this.handleCampusStudent}
+      <div className="container">
+        <h1>Add Campus</h1>
+        <div className="row">
+          <div className="col-25">
+            <label>Campus Name</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="campusName"
+              name="campusName"
+              placeholder="Enter Name..."
+              onChange={event =>
+                this.setState({ campusName: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>Student Count</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="studentCount"
+              name="studentCount"
+              placeholder="Enter student count..."
+              onChange={event =>
+                this.setState({ studentCount: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-25">
+            <label>Image URL</label>
+          </div>
+          <div className="col-75">
+            <input
+              type="text"
+              id="imgurl"
+              placeholder="Provide URL to your image..."
+              onChange={event =>
+                this.setState({ imageURL: event.target.value })
+              }
+            />
+          </div>
+        </div>
+        <div className="row">
+          <Link
+            lassName="link"
+            to="/campusListing"
+            style={{ float: "right", width: "99%" }}
           >
-            Submit
-          </button>
-        </Link>
+            <button
+              className="submitButton"
+              disabled={
+                this.state.title === "" || this.state.studentCount === ""
+                  ? true
+                  : false
+              }
+              onClick={this.handleCampusStudent}
+            >
+              Submit
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }
