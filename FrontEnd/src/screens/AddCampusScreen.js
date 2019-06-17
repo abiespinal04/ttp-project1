@@ -81,7 +81,7 @@ class AddCampusScreen extends Component {
         </div>
         <div className="row">
           <Link
-            lassName="link"
+            className="link"
             to="/campusListing"
             style={{ float: "right", width: "99%" }}
           >
